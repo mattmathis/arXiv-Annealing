@@ -1,18 +1,34 @@
-% BibTeX Bibliography for "Detecting Anomalous Topology" Paper
-% Converted from Markdown references
+% BibTeX Bibliography for "Annealing the Internet" Paper
+% References ordered by first appearance in the document
 
-@techreport{MLab14interconnection,
+% ============================================================================
+% USED REFERENCES (in document order)
+% ============================================================================
+
+@techreport{RFC2330,
+  author = {Paxson, Vern and Almes, Guy and Mahdavi, Jamshid and Mathis, Matt},
+  title = {Framework for {IP} Performance Metrics},
+  institution = {Internet Engineering Task Force},
+  type = {{RFC}},
+  number = {2330},
+  year = {1998},
+  month = may,
+  doi = {10.17487/RFC2330},
+  url = {https://www.rfc-editor.org/rfc/rfc2330},
+  note = {Defines the foundational framework for Internet performance measurement; updated by RFCs 7312, 8468, 9198}
+}
+
+@techreport{MLab2014interconnection,
   author = {{M-Lab Consortium}},
   title = {{ISP} Interconnection and its Impact on Consumer Internet Performance},
   institution = {Measurement Lab},
   year = {2014},
   month = oct,
   url = {https://www.measurementlab.net/publications/isp-interconnection-impact.pdf},
+  note = {Landmark study documenting interconnection congestion effects during 2013-2014}
 }
-Landmark study documenting interconnection congestion effects during 2013-2014.
 
- 
-@techreport{FCC15open,
+@techreport{FCC2015open,
   author = {{Federal Communications Commission}},
   title = {Protecting and Promoting the Open Internet},
   institution = {{Federal Communications Commission}},
@@ -24,7 +40,7 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   note = {Sections 201 and 202 establish FCC authority over interconnection disputes. Published in Federal Register April 13, 2015, Vol. 80, No. 70}
 }
 
-@techreport{FCC16broadband,
+@techreport{FCC2016broadband,
   author = {{Federal Communications Commission}},
   title = {2016 Measuring Broadband America Fixed Broadband Report},
   institution = {{Federal Communications Commission}},
@@ -50,6 +66,40 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   note = {Measurement platform used in FCC's Measuring Broadband America program. Company acquired by Cisco Systems, Inc., 2023}
 }
 
+@inproceedings{Goga2012speed,
+  author = {Oana Goga and Renata Teixeira},
+  title = {Speed Measurements of Residential Internet Access},
+  booktitle = {Passive and Active Measurement},
+  series = {Lecture Notes in Computer Science},
+  volume = {7192},
+  pages = {168--178},
+  year = {2012},
+  publisher = {Springer},
+  doi = {10.1007/978-3-642-28537-0_17},
+  url = {https://www.lix.polytechnique.fr/~goga/papers/PAM12-speed.pdf}
+}
+% PAPER SUMMARY:
+% Comparative evaluation of multiple available bandwidth estimation tools in
+% residential ADSL and cable networks. Tested tools including Pathload, IGI/PTR,
+% ASSOLO, and others from actual home gateways. Found that home gateway packet
+% forwarding limitations significantly affect measurement accuracy. This was one
+% of the first systematic studies of speed test accuracy from residential networks.
+%
+% NDT STRENGTHS:
+% - Listed as one of the established measurement tools available to users
+% - TCP-based achievable throughput metric matches what users actually experience
+% - Suitable for user-facing speed testing
+%
+% NDT WEAKNESSES:
+% - As a TCP achievable throughput tool, measurements are subject to end-user
+%   bottlenecks including home gateway limitations
+% - Paper found that home gateways have limited packet forwarding rates that can
+%   cause tools to underestimate available bandwidth by >60%
+% - TCP-based tools like NDT measure achievable throughput rather than true
+%   available bandwidth, making them indirect measurements of what ISPs guarantee
+% - Subject to TCP protocol limitations and congestion control behavior
+% - Performance depends heavily on client hardware/software capabilities
+
 @misc{Feamster2019challenges,
   author = {Feamster, Nick and Livingood, Jason},
   title = {Internet Speed Measurement: Current Challenges and Future Recommendations},
@@ -74,6 +124,203 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   url = {https://dl.acm.org/doi/10.1145/3372135},
   note = {Revised and expanded version for broader audience}
 }
+% PAPER SUMMARY:
+% Comprehensive review of Internet speed testing methods, their limitations, and
+% recommendations for next-generation measurement approaches. Discusses how speed
+% tests must evolve for gigabit+ era and how governmental organizations rely on
+% these measurements for policy decisions. Reviews technical and infrastructure
+% challenges facing all major speed test platforms.
+%
+% NDT STRENGTHS:
+% - Open source and transparent methodology
+% - Publicly available data supports research and policy analysis
+% - Long history of measurements (since 2009) enables longitudinal studies
+% - Supported by M-Lab consortium with academic backing
+% - Used by multiple governmental measurement programs
+%
+% NDT WEAKNESSES:
+% - Test protocol was historically unable to saturate connections and measure
+%   very high speeds (gigabit+), a "technical limitation"
+% - Server infrastructure has proven "unreliable" according to this analysis
+% - Infrastructure issues include: server capacity limitations (1Gbps Ethernet
+%   links can't measure multiple simultaneous gigabit tests), constrained or
+%   congested datacenter connections, single-homed servers to congested networks
+% - At one point, FCC Measuring Broadband America program discarded M-Lab data
+%   "due to severe impairments"
+% - Relies on IP geolocation rather than true geographic coordinates, reducing
+%   spatial accuracy
+% - Server performance varies: storage I/O limits, memory/CPU constraints
+% - Designing high-scale, reliable, high-performance measurement platform is
+%   difficult; challenge increases as more consumers adopt gigabit services
+% - Outmoded technology for current Internet speeds and use cases
+
+@article{MacMillan2023comparative,
+  author = {Kyle MacMillan and Tarun Mangla and James Saxon and Nicole P. Marwell and Nick Feamster},
+  title = {A Comparative Analysis of Ookla Speedtest and Measurement Labs Network Diagnostic Test ({NDT7})},
+  journal = {Proceedings of the ACM on Measurement and Analysis of Computing Systems},
+  volume = {7},
+  number = {1},
+  pages = {1--26},
+  year = {2023},
+  month = mar,
+  doi = {10.1145/3579448},
+  url = {https://arxiv.org/abs/2205.12376}
+}
+% PAPER SUMMARY:
+% First-ever paired comparison of Ookla and NDT7 in both controlled lab settings
+% and real-world deployments. Collected 80,000+ paired measurements from 126
+% households over 9 months across different ISPs and speed tiers. Tested both
+% tools under comprehensive network conditions including varied latency, link
+% capacity, TCP congestion control algorithms, and native vs browser clients.
+%
+% NDT STRENGTHS:
+% - Open source with transparent methodology and publicly available data
+% - Similar accuracy to Ookla in most controlled lab conditions
+% - Can achieve 95% link saturation up to 2 Gbps on single TCP connection
+% - Provides detailed diagnostic information beyond just speed numbers
+% - Uses TCP BBR congestion control (NDT7) for better performance
+% - Free and accessible for research purposes
+%
+% NDT WEAKNESSES:
+% - High variability in test results, especially in real-world deployment
+% - Single TCP connection limits throughput measurement on high-latency networks
+%   (Ookla consistently reports 5-25% higher speeds on high-latency connections)
+% - Fixed 10-second test duration doesn't adapt to network conditions
+% - 43.4% of households showed statistically significant speed decreases during
+%   peak hours (vs only 18.9% for Ookla)
+% - Performance varies significantly across different M-Lab servers
+% - Less sophisticated sampling strategy compared to Ookla (doesn't discard
+%   slow-start samples effectively)
+% - Server infrastructure issues: some servers were single-homed to congested
+%   networks (e.g., Cogent congestion issue mentioned in related work)
+% - Cannot reliably measure very high speeds (gigabit+) that are increasingly
+%   common in residential networks
+
+@inproceedings{Lipphardt2025speed,
+  author = {Florian Lipphardt and Midori Tashiro and Romain Fontugne},
+  title = {You wanna see some real speed? {C}omparative Analysis of global {M}easurement {L}ab and {C}loudflare speed test results},
+  booktitle = {Proceedings of the 20th Asian Internet Engineering Conference},
+  year = {2025},
+  month = nov,
+  pages = {1--8},
+  doi = {10.1145/3763400.3763444},
+  url = {https://dl.acm.org/doi/10.1145/3763400.3763444}
+}
+% PAPER SUMMARY:
+% First comparison of one full year of aggregated data from M-Lab and Cloudflare
+% speed test platforms (2023). Analyzes differences in measurement algorithms,
+% infrastructure, routing policies, and results. Examines topological and
+% geographical coverage, data quality issues, country-wise differences, and impact
+% of server deployment. Dataset includes millions of measurements globally.
+%
+% NDT STRENGTHS:
+% - M-Lab tests vastly outnumber Cloudflare by factor of 10, making it the more
+%   popular testing platform globally
+% - Better suited for longitudinal studies: 75-85% of user pairs overlap between
+%   adjacent weeks (vs 49-62% for Cloudflare), indicating more consistent user base
+% - Reports 5-10% higher throughput values than Cloudflare on global scale
+% - Longer measurement history and established platform
+% - More stable weekly measurement patterns
+% - NDT7 uses WebSockets over TLS enabling secure browser-based testing
+% - Supports advanced TCP features (BBR congestion control)
+% - Better browser compatibility and firewall traversal than older NDT5
+%
+% NDT WEAKNESSES:
+% - Single TCP connection limits throughput measurement compared to Cloudflare's
+%   multiple concurrent connections
+% - Less stable user base than desired for some analyses (though better than
+%   Cloudflare)
+% - Earlier NDT5 version had significant limitations: required Java applets,
+%   caused accessibility issues, had firewall traversal problems
+% - Measurement methodology differences make direct comparison with other platforms
+%   difficult
+% - Server deployment and routing policies affect results in ways that must be
+%   carefully considered
+% - Data requires sanitization before use for research
+% - Coverage differences across regions compared to CDN-based solutions
+
+@misc{wikiKSdistance,
+  author = {Kolmogorov, Andrey and Smirnov, Nikolai},
+  title = {Kolmogorov--Smirnov test},
+  year = {1948},
+  url = {https://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test},
+  note = {For accessible explanation of the KS distance statistic. Original papers: Kolmogorov (1933) and Smirnov (1948)}
+}
+
+@misc{MLab2025barchart,
+  author = {{M-Lab}},
+  title = {Global Metro Bar Chart -- Interactive Dashboard},
+  year = {2025},
+  url = {https://dashboards.measurementlab.net/d/20250110a/global-metro-bar-chart},
+  note = {Live interactive visualization of difference statistics across all M-Lab metros}
+}
+% Our live dashboard showing bar charts of worst-case difference statistics
+% (KS distance and geometric mean ratio) for every M-Lab metro.
+
+@article{Gettys2012bufferbloat,
+  author = {Gettys, Jim and Nichols, Kathleen},
+  title = {Bufferbloat: Dark Buffers in the Internet},
+  journal = {Communications of the ACM},
+  volume = {55},
+  number = {1},
+  pages = {57--65},
+  year = {2012},
+  doi = {10.1145/2063176.2063196},
+  url = {https://dl.acm.org/doi/10.1145/2063176.2063196},
+  note = {Identifies excessive buffering throughout the Internet as a major source of latency}
+}
+% Describes how oversized buffers in routers, switches, and operating systems
+% cause massive latency spikes under load. Coined "bufferbloat" as a term for
+% the problem. Catalyzed the AQM/FQ movement (CoDel, fq_codel, CAKE). Relevant
+% to understanding why working-conditions latency differs from idle latency and
+% why our minRTT metric may understate user-experienced delays.
+
+@article{Briscoe2016reducing,
+  author = {Briscoe, Bob and Brunstrom, Anna and Petlund, Andreas and Hayes, David and Ros, David and Tsang, Jae and Gjessing, Stein and Fairhurst, Godred and Griwodz, Carsten and Welzl, Michael},
+  title = {Reducing Internet Latency: A Survey of Techniques and Their Merits},
+  journal = {IEEE Communications Surveys \& Tutorials},
+  volume = {18},
+  number = {3},
+  pages = {2149--2196},
+  year = {2016},
+  doi = {10.1109/COMST.2014.2375213},
+  url = {https://ieeexplore.ieee.org/document/6967689},
+  note = {Comprehensive survey of latency sources and mitigation techniques}
+}
+% Exhaustive survey cataloging sources of Internet latency and techniques to
+% reduce them. Covers queuing delay, propagation delay, protocol overhead, and
+% middlebox processing. Relevant context for interpreting the minRTT differences
+% our methodology uses to detect routing anomalies and hairpinning.
+
+@techreport{BITAG2022latency,
+  author = {{Broadband Internet Technical Advisory Group}},
+  title = {Latency Explained},
+  institution = {{BITAG}},
+  year = {2022},
+  url = {http://www.bitag.org/documents/BITAG_latency_explained.pdf},
+  note = {Industry report explaining latency sources and their impact on broadband quality of experience}
+}
+% Comprehensive industry report arguing that consistently low latency matters
+% as much as throughput for quality of experience. Covers working latency,
+% buffering delay, AQM, and measurement methodologies. Aimed at policymakers
+% and industry; provides accessible context for why latency metrics matter.
+
+@misc{IPPM2025responsiveness,
+  author = {Paasch, Christoph and Meyer, Randall and Cheshire, Stuart and Hawkins, Will},
+  title = {Responsiveness under Working Conditions},
+  year = {2025},
+  howpublished = {Internet-Draft draft-ietf-ippm-responsiveness-08},
+  url = {https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/},
+  note = {IETF IPPM working group draft defining the Responsiveness Test, measuring Round-trips Per Minute (RPM) under load}
+}
+% Defines a methodology for measuring network responsiveness while the network
+% is actively in use, expressed as RPM. Addresses the gap between idle latency
+% (what ping measures) and working latency (what users experience). Complements
+% bufferbloat research by providing a standardized measurement approach.
+
+% ============================================================================
+% UNUSED REFERENCES (preserved for potential future use)
+% ============================================================================
 
 @article{Kolmogorov1933,
   author = {Kolmogorov, Andrey},
@@ -83,6 +330,9 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   pages = {83--91},
   year = {1933}
 }
+% Original paper defining the empirical distribution function and the statistic
+% for testing goodness of fit. Establishes the theoretical foundation for the
+% KS test used in our methodology. Currently cited via wikiKSdistance instead.
 
 @article{Smirnov1948,
   author = {Smirnov, Nikolai},
@@ -94,24 +344,21 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   year = {1948},
   doi = {10.1214/aoms/1177730256}
 }
+% Extends Kolmogorov's work to the two-sample case, enabling comparison of two
+% empirical distributions. This is the form of the KS test we actually use to
+% compare throughput distributions across different M-Lab servers.
 
-@misc{wikiKSdistance,
-  author = {Kolmogorov, Andrey and Smirnov, Nikolai},
-  title = {Kolmogorov--Smirnov test},
-  year = {1948},
-  url = {https://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test},
-  note = {For accessible explanation of the KS distance statistic. Original papers: Kolmogorov (1933) and Smirnov (1948)}
+@misc{Cheshire1996latency,
+  author = {Cheshire, Stuart},
+  title = {It's the Latency, Stupid},
+  year = {1996},
+  url = {https://stuartcheshire.org/rants/Latency.html},
+  note = {Influential essay arguing that latency, not bandwidth, is the dominant factor in user-perceived Internet performance}
 }
-
-@misc{MLab25barchart,
-  author = {{M-Lab}},
-  title = {Global Metro Bar Chart -- Interactive Dashboard},
-  year = {2025},
-  url = {https://dashboards.measurementlab.net/d/20250110a/global-metro-bar-chart},
-  note = {Live interactive visualization of difference statistics across all M-Lab metros}
-}
-
-% Additional references mentioned but to be added as needed
+% Early and widely cited argument that latency matters more than throughput
+% for interactive applications. Makes the case that bandwidth is improving
+% faster than latency, so latency will increasingly dominate user experience.
+% Relevant context for our use of minRTT as a key diagnostic metric.
 
 @inproceedings{Faratin2007complexity,
   author = {Faratin, Peyman and Clark, David and Gilmore, Patrick and Bauer, Steven and Berger, Arthur and Lehr, William},
@@ -122,6 +369,10 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   url = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2138252},
   note = {Foundational work on internet interconnection economics}
 }
+% Analyzes the technical, economic, and policy dimensions of Internet
+% interconnection. Models how transit, peering, and paid peering arrangements
+% create complex incentive structures that can lead to congestion disputes.
+% Relevant background for understanding why interconnection bottlenecks arise.
 
 @inproceedings{Dhamdhere2010you,
   author = {Dhamdhere, Amogh and Dovrolis, Constantine},
@@ -131,6 +382,10 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   doi = {10.1145/1921168.1921196},
   note = {Documents evolution of internet interconnection structure}
 }
+% Shows the Internet topology shifting from a strict transit hierarchy to a
+% dense peering mesh, with content providers and large access networks
+% increasingly interconnecting directly. Provides structural context for why
+% mid-path performance varies so much across different ISP pairings.
 
 @inproceedings{Sundaresan2011broadband,
   author = {Sundaresan, Srikanth and de Donato, Walter and Feamster, Nick and Teixeira, Renata and Crawford, Sam and Pescap\`{e}, Antonio},
@@ -141,6 +396,10 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   doi = {10.1145/2018436.2018452},
   note = {Home gateway measurement approach; isolates access performance}
 }
+% Deploys custom routers in homes to measure broadband performance from the
+% gateway, isolating the access link from the rest of the path. Demonstrates
+% that home gateway-based measurement captures access edge performance but
+% by design excludes mid-path and interconnection effects that our work detects.
 
 @inproceedings{Richter2014peering,
   author = {Richter, Philipp and Smaragdakis, Georgios and Plonka, David and Berger, Arthur},
@@ -151,6 +410,10 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   doi = {10.1145/2663716.2663757},
   note = {Analysis of internet exchange point routing and peering}
 }
+% Examines how IXP route servers shape peering relationships and traffic
+% exchange. Shows that route server policies significantly affect which paths
+% traffic takes, directly relevant to understanding why different M-Lab servers
+% may see different performance to the same client ISP.
 
 @inproceedings{Ihm2011understanding,
   author = {Ihm, Sunghwan and Pai, Vivek S.},
@@ -161,6 +424,10 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   doi = {10.1145/2068816.2068845},
   note = {Characterization of web traffic patterns and performance requirements}
 }
+% Large-scale study of web traffic evolution showing increasing reliance on
+% CDNs and third-party content. Documents how modern web pages require many
+% connections to diverse servers, making end-to-end path quality across
+% multiple interconnections increasingly important to user experience.
 
 @inproceedings{Jiang2016via,
   author = {Jiang, Junchen and Sekar, Vyas and Stoica, Ion and Zhang, Hui},
@@ -171,18 +438,10 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   doi = {10.1145/2934872.2934884},
   note = {Impact of path selection on real-time application performance}
 }
-
-@article{Briscoe2016reducing,
-  author = {Briscoe, Bob and Brunstrom, Anna and Petlund, Andreas and Hayes, David and Ros, David and Tsang, Jae and Gjessing, Stein and Fairhurst, Godred and Griwodz, Carsten and Welzl, Michael},
-  title = {Reducing Internet Latency: A Survey of Techniques and Their Merits},
-  journal = {IEEE Communications Surveys \& Tutorials},
-  volume = {18},
-  number = {3},
-  pages = {2149--2196},
-  year = {2016},
-  doi = {10.1109/COMST.2014.2375213},
-  note = {Comprehensive survey of latency sources and mitigation techniques}
-}
+% Demonstrates that relay-based path selection can dramatically improve VoIP
+% call quality by avoiding poorly performing interconnections. Shows that
+% alternative paths through the Internet often perform much better than default
+% BGP routing -- directly illustrating the mid-path problems our method detects.
 
 @inproceedings{Hesmans2017tcp,
   author = {Hesmans, Benjamin and Duchene, Fabien and Paasch, Christoph and Detal, Gregory and Bonaventure, Olivier},
@@ -193,3 +452,7 @@ Landmark study documenting interconnection congestion effects during 2013-2014.
   doi = {10.1145/3143361.3143379},
   note = {Documents impact of middleboxes on transport performance}
 }
+% Tests whether TCP extensions (MPTCP, TFO, ECN, etc.) survive traversal
+% through real-world middleboxes. Finds widespread interference from firewalls,
+% NATs, and traffic shapers. Relevant to understanding how stateful middleboxes
+% (like the per-flow policer suggested by Figure 2) affect measured performance.

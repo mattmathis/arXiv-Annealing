@@ -12,6 +12,7 @@ RAW = $(BUILD_DIR)/paper.wget
 TEX = $(BUILD_DIR)/paper.tex
 PDF = $(BUILD_DIR)/paper.pdf
 BIB = refs.bib
+DRAFTS = "$(HOME)/Downloads/drafts/Anealing.pdf"
 
 .PHONY: all fetch convert pdf clean
 
@@ -32,15 +33,16 @@ pdf: convert
 	@echo "==> Building PDF (first pass)..."
 	@cd $(BUILD_DIR) && pdflatex -interaction=nonstopmode paper.tex > pdflatex.log 2>&1 || \
 		(echo "    LaTeX error - check $(BUILD_DIR)/pdflatex.log"; exit 1)
-	@echo "==> Running BibTeX..."
+	@echo "==> Running BibTeX... See: build/bibtex.log"
 	@cd $(BUILD_DIR) && bibtex paper > bibtex.log 2>&1 || true
-	@cd $(BUILD_DIR) && echo "   Result "`tail -1 bibtex.log`
+	@cd $(BUILD_DIR) && echo "   Result "`egrep -i 'error|warning' bibtex.log`
 	@echo "==> Building PDF (second pass)..."
 	@cd $(BUILD_DIR) && pdflatex -interaction=nonstopmode paper.tex >> pdflatex.log 2>&1
 	@echo "==> Building PDF (final pass)..."
 	@cd $(BUILD_DIR) && pdflatex -interaction=nonstopmode paper.tex >> pdflatex.log 2>&1
 	@echo ""
 	@echo "==> PDF created successfully: $(PDF)"
+	cp $(PDF) $(DRAFTS)
 	@echo ""
 
 clean:

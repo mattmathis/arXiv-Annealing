@@ -40,6 +40,38 @@
   note = {Sections 201 and 202 establish FCC authority over interconnection disputes. Published in Federal Register April 13, 2015, Vol. 80, No. 70}
 }
 
+@misc{MLab2017monitoring,
+  author = {{Measurement Lab}},
+  title = {Monitoring Interconnection Performance Since the Open Internet Order},
+  year = {2017},
+  url = {https://www.measurementlab.net/blog/interconnection_update/},
+  note = {Accessed February 2026}
+}
+% M-Lab blog post describing their ongoing commitment to interconnection research,
+% including an FCC filing. States: "M-Lab's focus on interconnection was initially inspired
+% by our observation of relative underperformance in cities where the platform maintained
+% multiple measurement sites." Describes M-Lab's submission to the FCC Open Internet docket
+% committing to research on interconnection performance. Provides post-2015 update on
+% interconnection congestion trends. Directly demonstrates that interconnection measurement
+% is an explicit, sustained M-Lab research priority.
+
+@misc{fcc2017mlabfiling,
+  author       = {Collin Anderson and Measurement Lab},
+  title        = {Letter to Marlene H. Dortch (FCC Secretary) regarding Monitoring Interconnection Performance Since the Open Internet Order},
+  howpublished = {Federal Communications Commission (FCC) Electronic Comment Filing System (ECFS)},
+  year         = {2017},
+  month        = {July},
+  day          = {12},
+  note         = {WC Docket No. 17-108; Filing ID: 10715748225796},
+  url          = {https://www.fcc.gov/ecfs/search/search-filings/filing/10715748225796}
+}
+% FCC filing by Collin Anderson on behalf of M-Lab, submitted to WC Docket No. 17-108
+% (Restoring Internet Freedom). Presents M-Lab's analysis of interconnection performance
+% trends since the 2015 Open Internet Order. Documents improvements in interconnection
+% quality at previously congested exchange points and argues that ongoing measurement
+% transparency is essential for maintaining these improvements. Companion to the
+% MLab2017monitoring blog post.
+
 @techreport{FCC2016broadband,
   author = {{Federal Communications Commission}},
   title = {2016 Measuring Broadband America Fixed Broadband Report},
@@ -48,22 +80,6 @@
   month = dec,
   url = {https://www.fcc.gov/reports-research/reports/measuring-broadband-america/measuring-fixed-broadband-2016},
   note = {Methodology explicitly focuses on access edge, excluding interconnection effects}
-}
-
-@misc{Ookla,
-  author = {Ookla},
-  title = {Speedtest by Ookla -- The Global Broadband Speed Test},
-  year = {2024},
-  url = {https://www.speedtest.net/},
-  note = {Commercial measurement platform using nearest-server selection}
-}
-
-@misc{SamKnows,
-  author = {{SamKnows Limited}},
-  title = {{SamKnows} -- The Global Standard for Internet Measurement},
-  year = {2023},
-  url = {https://web.archive.org/web/20230707223136/https://www.samknows.com/},
-  note = {Measurement platform used in FCC's Measuring Broadband America program. Company acquired by Cisco Systems, Inc., 2023}
 }
 
 @inproceedings{Goga2012speed,
@@ -239,14 +255,6 @@
 % - Data requires sanitization before use for research
 % - Coverage differences across regions compared to CDN-based solutions
 
-@misc{wikiKSdistance,
-  author = {Kolmogorov, Andrey and Smirnov, Nikolai},
-  title = {Kolmogorov--Smirnov test},
-  year = {1948},
-  url = {https://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test},
-  note = {For accessible explanation of the KS distance statistic. Original papers: Kolmogorov (1933) and Smirnov (1948)}
-}
-
 @misc{MLab2025barchart,
   author = {{M-Lab}},
   title = {Global Metro Bar Chart -- Interactive Dashboard},
@@ -305,6 +313,14 @@
 % buffering delay, AQM, and measurement methodologies. Aimed at policymakers
 % and industry; provides accessible context for why latency metrics matter.
 
+@misc{IPPM,
+  author = {{IETF}},
+  title = {{IP} Performance Metrics ({IPPM}) Working Group},
+  year = {2025},
+  url = {https://datatracker.ietf.org/wg/ippm/about/},
+  note = {IETF working group chartered to develop standard metrics for Internet data delivery; active since 1997}
+}
+
 @misc{IPPM2025responsiveness,
   author = {Paasch, Christoph and Meyer, Randall and Cheshire, Stuart and Hawkins, Will},
   title = {Responsiveness under Working Conditions},
@@ -319,7 +335,7 @@
 % bufferbloat research by providing a standardized measurement approach.
 
 % ============================================================================
-% UNUSED REFERENCES (preserved for potential future use)
+% UNUSED REFERENCES (chronological order, preserved for potential future use)
 % ============================================================================
 
 @article{Kolmogorov1933,
@@ -348,6 +364,14 @@
 % empirical distributions. This is the form of the KS test we actually use to
 % compare throughput distributions across different M-Lab servers.
 
+@misc{wikiKSdistance,
+  author = {Kolmogorov, Andrey and Smirnov, Nikolai},
+  title = {Kolmogorov--Smirnov test},
+  year = {1948},
+  url = {https://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test},
+  note = {For accessible explanation of the KS distance statistic. Original papers: Kolmogorov (1933) and Smirnov (1948)}
+}
+
 @misc{Cheshire1996latency,
   author = {Cheshire, Stuart},
   title = {It's the Latency, Stupid},
@@ -374,12 +398,31 @@
 % create complex incentive structures that can lead to congestion disputes.
 % Relevant background for understanding why interconnection bottlenecks arise.
 
+@inproceedings{Deng2008pong,
+  author = {Leiwen Deng and Aleksandar Kuzmanovic},
+  title = {Monitoring Persistently Congested Internet Links},
+  booktitle = {Proceedings of the International Conference on Network Protocols (ICNP)},
+  year = {2008},
+  pages = {31--40},
+  month = {October},
+  doi = {10.1109/ICNP.2008.4697420},
+  url = {https://ieeexplore.ieee.org/document/4697035}
+}
+% Summary: Early work introducing method for detecting interdomain congestion using latency
+% measurements. Presents "Pong" tool that identifies and monitors persistently congested
+% Internet links. Key limitation: requires cooperative endpoints (system on other side of
+% interdomain link), making it challenging to deploy at scale. Takes advantage of persistent
+% congestion property to overcome challenges common to delay-based inference tools. Precursor
+% to TSLP which doesn't require cooperative endpoints.
+% M-LAB MENTION: No mention - predates M-Lab's prominence in congestion studies.
+
 @inproceedings{Dhamdhere2010you,
   author = {Dhamdhere, Amogh and Dovrolis, Constantine},
   title = {The Internet is Flat: Modeling the Transition from a Transit Hierarchy to a Peering Mesh},
   booktitle = {Proceedings of ACM CoNEXT},
   year = {2010},
   doi = {10.1145/1921168.1921196},
+  url = {https://dl.acm.org/doi/10.1145/1921168.1921196},
   note = {Documents evolution of internet interconnection structure}
 }
 % Shows the Internet topology shifting from a strict transit hierarchy to a
@@ -387,33 +430,24 @@
 % increasingly interconnecting directly. Provides structural context for why
 % mid-path performance varies so much across different ISP pairings.
 
-@inproceedings{Sundaresan2011broadband,
-  author = {Sundaresan, Srikanth and de Donato, Walter and Feamster, Nick and Teixeira, Renata and Crawford, Sam and Pescap\`{e}, Antonio},
-  title = {Broadband Internet Performance: A View From the Gateway},
-  booktitle = {Proceedings of ACM SIGCOMM},
-  pages = {134--145},
-  year = {2011},
-  doi = {10.1145/2018436.2018452},
-  note = {Home gateway measurement approach; isolates access performance}
+@article{Dovrolis2010mlab,
+  author = {Constantine Dovrolis and Kim Gettys and John Hamre and Chris Ritzo and Paul Samaras and Russ Stroud and Todd Underwood},
+  title = {Measurement Lab: Overview and an Invitation to the Research Community},
+  journal = {ACM SIGCOMM Computer Communication Review},
+  volume = {40},
+  number = {3},
+  pages = {53--56},
+  year = {2010},
+  month = {July},
+  doi = {10.1145/1823844.1823853},
+  url = {https://dl.acm.org/doi/10.1145/1823844.1823853}
 }
-% Deploys custom routers in homes to measure broadband performance from the
-% gateway, isolating the access link from the rest of the path. Demonstrates
-% that home gateway-based measurement captures access edge performance but
-% by design excludes mid-path and interconnection effects that our work detects.
-
-@inproceedings{Richter2014peering,
-  author = {Richter, Philipp and Smaragdakis, Georgios and Plonka, David and Berger, Arthur},
-  title = {Peering at Peerings: On the Role of {IXP} Route Servers},
-  booktitle = {Proceedings of ACM Internet Measurement Conference (IMC)},
-  pages = {31--44},
-  year = {2014},
-  doi = {10.1145/2663716.2663757},
-  note = {Analysis of internet exchange point routing and peering}
-}
-% Examines how IXP route servers shape peering relationships and traffic
-% exchange. Shows that route server policies significantly affect which paths
-% traffic takes, directly relevant to understanding why different M-Lab servers
-% may see different performance to the same client ISP.
+% Original peer-reviewed overview of M-Lab platform, goals, and infrastructure.
+% States: "The goal of M-Lab is to advance network research and empower the public with
+% useful information about their broadband connections. By enhancing Internet transparency,
+% M-Lab helps sustain a healthy, innovative Internet." Describes M-Lab's server placement
+% in transit networks as a deliberate architectural choice to measure paths that cross
+% interconnections. This is the primary academic citation for M-Lab's founding mission.
 
 @inproceedings{Ihm2011understanding,
   author = {Ihm, Sunghwan and Pai, Vivek S.},
@@ -422,12 +456,78 @@
   pages = {295--312},
   year = {2011},
   doi = {10.1145/2068816.2068845},
+  url = {https://dl.acm.org/doi/10.1145/2068816.2068845},
   note = {Characterization of web traffic patterns and performance requirements}
 }
 % Large-scale study of web traffic evolution showing increasing reliance on
 % CDNs and third-party content. Documents how modern web pages require many
 % connections to diverse servers, making end-to-end path quality across
 % multiple interconnections increasingly important to user experience.
+
+@inproceedings{Sundaresan2011broadband,
+  author = {Sundaresan, Srikanth and de Donato, Walter and Feamster, Nick and Teixeira, Renata and Crawford, Sam and Pescap\`{e}, Antonio},
+  title = {Broadband Internet Performance: A View From the Gateway},
+  booktitle = {Proceedings of ACM SIGCOMM},
+  pages = {134--145},
+  year = {2011},
+  doi = {10.1145/2018436.2018452},
+  url = {https://dl.acm.org/doi/10.1145/2018436.2018452},
+  note = {Home gateway measurement approach; isolates access performance}
+}
+% Deploys custom routers in homes to measure broadband performance from the
+% gateway, isolating the access link from the rest of the path. Demonstrates
+% that home gateway-based measurement captures access edge performance but
+% by design excludes mid-path and interconnection effects that our work detects.
+
+@inproceedings{Luckie2014challenges,
+  author = {Matthew Luckie and Amogh Dhamdhere and David Clark and Bradley Huffaker and kc claffy},
+  title = {Challenges in Inferring Internet Interdomain Congestion},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2014},
+  pages = {15--22},
+  month = {November},
+  doi = {10.1145/2663716.2663747},
+  url = {http://conferences2.sigcomm.org/imc/2014/papers/p15.pdf}
+}
+% Summary: Introduces the foundational Time Series Latency Probes (TSLP) technique for detecting
+% interdomain congestion. Relies on two facts: (1) Internet traffic is typically diurnal, and
+% (2) queues increase packet delay during congestion. Sends ICMP probes to near and far ends
+% of interdomain links - sustained elevated RTT at far end (but not near end) indicates
+% congestion. Describes methodology and challenges, particularly interdomain router-level
+% topology inference. Presents initial promising results motivating further work.
+% M-LAB MENTION: Minimal - cites M-Lab 2014 interconnection report but does not use M-Lab data.
+
+@inproceedings{Richter2014peering,
+  author = {Richter, Philipp and Smaragdakis, Georgios and Plonka, David and Berger, Arthur},
+  title = {Peering at Peerings: On the Role of {IXP} Route Servers},
+  booktitle = {Proceedings of ACM Internet Measurement Conference (IMC)},
+  pages = {31--44},
+  year = {2014},
+  doi = {10.1145/2663716.2663757},
+  url = {https://dl.acm.org/doi/10.1145/2663716.2663757},
+  note = {Analysis of internet exchange point routing and peering}
+}
+% Examines how IXP route servers shape peering relationships and traffic
+% exchange. Shows that route server policies significantly affect which paths
+% traffic takes, directly relevant to understanding why different M-Lab servers
+% may see different performance to the same client ISP.
+
+@techreport{Claffy2016policy,
+  author = {kc Claffy and David D. Clark and Steve Bauer and Amogh Dhamdhere},
+  title = {Policy Challenges in Mapping Internet Interdomain Congestion},
+  institution = {Research Conference on Communication, Information and Internet Policy (TPRC)},
+  year = {2016},
+  url = {https://groups.csail.mit.edu/ana/DDC-Policy%20Challenges%20in%20Mapping%20Internet%20Interdomain%20Congestion.pdf}
+}
+% Summary: Discusses policy and measurement challenges for understanding interconnection congestion.
+% Introduces topology-aware model of interconnection with multiple aggregation granularities
+% (link-level, PoP-level, metro-level, AS-level, organization-level). Addresses how to measure
+% interconnection links and interpret results for policymakers. Notes FCC asserted authority
+% over interconnection but acknowledged lack of measurement expertise. Discusses difficulties
+% in getting ground truth data due to proprietary nature. Emphasizes need for methodology that
+% relates measurements to justified inferences about actual impairment.
+% M-LAB MENTION: Discusses M-Lab 2014 study and notes limitations - lacked path information
+% making it challenging to conclude congestion was at interconnection vs internal to ASes.
 
 @inproceedings{Jiang2016via,
   author = {Jiang, Junchen and Sekar, Vyas and Stoica, Ion and Zhang, Hui},
@@ -436,12 +536,52 @@
   pages = {286--299},
   year = {2016},
   doi = {10.1145/2934872.2934884},
+  url = {https://dl.acm.org/doi/10.1145/2934872.2934884},
   note = {Impact of path selection on real-time application performance}
 }
 % Demonstrates that relay-based path selection can dramatically improve VoIP
 % call quality by avoiding poorly performing interconnections. Shows that
 % alternative paths through the Internet often perform much better than default
 % BGP routing -- directly illustrating the mid-path problems our method detects.
+
+@inproceedings{Luckie2016bdrmap,
+  author = {Matthew Luckie and Amogh Dhamdhere and Bradley Huffaker and David Clark and kc claffy},
+  title = {bdrmap: Inference of Borders Between IP Networks},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2016},
+  pages = {381--396},
+  month = {November},
+  doi = {10.1145/2987443.2987467},
+  url = {https://www.caida.org/publications/papers/2016/bdrmap/}
+}
+% Summary: Tackles problem of automatically inferring network boundaries (interdomain links) in
+% traceroute data. Uses targeted traceroutes, alias resolution, and topological constraints
+% coded as heuristics to identify interdomain links at individual border router granularity.
+% Focuses on links attached to network hosting the measurement vantage point. Validates against
+% ground truth from 4 networks on 3,277 links achieving 96.3%-98.9% accuracy. With 19 VPs in
+% large U.S. broadband provider, revealed 45 router-level links with single Tier-1 peer.
+% Critical foundation for TSLP-based congestion detection which requires accurate identification
+% of interdomain links to monitor.
+% M-LAB MENTION: Cites M-Lab 2014 interconnection report. The bdrmap tool itself is used
+% extensively in later congestion studies that analyze M-Lab data.
+
+@inproceedings{Marder2016mapit,
+  author = {Alexander Marder and Jonathan M. Smith},
+  title = {MAP-IT: Multipass Accurate Passive Inferences from Traceroute},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2016},
+  pages = {397--411},
+  month = {November},
+  doi = {10.1145/2987443.2987471},
+  url = {https://dl.acm.org/doi/10.1145/2987443.2987471}
+}
+% Summary: Tackles challenge of inferring ALL AS-level network boundaries in massive archived
+% traceroute collections (not just boundaries visible from specific networks). Uses multipass
+% algorithm that applies heuristics to constrain inferences from diverse traceroute campaigns.
+% Designed to work on already-collected traceroutes making it applicable to large historical
+% datasets. Complements bdrmap by handling broader traceroute collections. Combined approach
+% (bdrmapIT) became cornerstone for large-scale interdomain topology inference.
+% M-LAB MENTION: No direct M-Lab mention but applicable to M-Lab traceroute archives.
 
 @inproceedings{Hesmans2017tcp,
   author = {Hesmans, Benjamin and Duchene, Fabien and Paasch, Christoph and Detal, Gregory and Bonaventure, Olivier},
@@ -450,9 +590,255 @@
   pages = {65--77},
   year = {2017},
   doi = {10.1145/3143361.3143379},
+  url = {https://dl.acm.org/doi/10.1145/3143361.3143379},
   note = {Documents impact of middleboxes on transport performance}
 }
 % Tests whether TCP extensions (MPTCP, TFO, ECN, etc.) survive traversal
 % through real-world middleboxes. Finds widespread interference from firewalls,
 % NATs, and traffic shapers. Relevant to understanding how stateful middleboxes
 % (like the per-flow policer suggested by Figure 2) affect measured performance.
+
+@inproceedings{Sundaresan2017challenges,
+  author = {Srikanth Sundaresan and Xiaohong Deng and Yun Feng and Danny Lee and Amogh Dhamdhere},
+  title = {Challenges in Inferring Internet Congestion Using Throughput Measurements},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2017},
+  pages = {43--56},
+  month = {November},
+  doi = {10.1145/3278532.3278574},
+  url = {https://www.caida.org/catalog/papers/2017_challenges_inferring_internet_congestion/}
+}
+% Summary: Critical analysis of using crowdsourced throughput measurements (specifically M-Lab NDT)
+% to infer and localize interdomain congestion. Identifies three key challenges: (1) accurately
+% identifying which link is congested requires fine-grained tomography not supported by existing
+% platforms, (2) insufficient path visibility to popular content sources, (3) measurement
+% synchronization issues and traceroute artifacts. Uses MAP-IT algorithm to identify interdomain
+% links in M-Lab traceroute data. Shows 82% of traces from top 10 US ISPs were single AS hop
+% from M-Lab servers (good for congestion inference). Notes interconnections between same ISP
+% pairs often cross different physical links in different regions.
+% M-LAB MENTION: YES - Entire paper focuses on analyzing M-Lab NDT data and methodology.
+% Discusses limitations of M-Lab's crowd-sourced approach and lack of path information.
+% Uses M-Lab data from May 2015 showing tests from Atlanta server to various ISPs.
+
+@inproceedings{Sundaresan2017tcp,
+  author = {Srikanth Sundaresan and Mark Allman and Amogh Dhamdhere and kc Claffy},
+  title = {TCP Congestion Signatures},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2017},
+  pages = {64--77},
+  month = {November},
+  doi = {10.1145/3278532.3278566},
+  url = {https://dl.acm.org/doi/10.1145/3278532.3278566}
+}
+% Summary: Develops technique to distinguish self-induced congestion from external (pre-existing)
+% congestion using TCP flow RTT characteristics during slow start. Two statistical metrics from
+% flow RTT - coefficient of variation and normalized difference between max/min RTT - can identify
+% congestion type with up to 90% accuracy in controlled experiments. Evaluates on M-Lab data
+% and CAIDA Ark platform achieving 99% accuracy detecting self-induced congestion, 85% for
+% external. Important for understanding what kind of congestion throughput measurements detect.
+% M-LAB MENTION: YES - Uses M-Lab data as one of two real-world datasets for evaluation.
+
+@inproceedings{Dhamdhere2018inferring,
+  author = {Amogh Dhamdhere and David D. Clark and Alexander Gamero-Garrido and Matthew Luckie and Ricky K. P. Mok and Gautam Akiwate and Kabir Gogia and Vaibhav Bajpai and Alex C. Snoeren and kc claffy},
+  title = {Inferring Persistent Interdomain Congestion},
+  booktitle = {Proceedings of the ACM SIGCOMM Conference},
+  year = {2018},
+  pages = {1--15},
+  month = {August},
+  address = {Budapest, Hungary},
+  doi = {10.1145/3230543.3230549},
+  url = {https://dl.acm.org/doi/10.1145/3230543.3230549}
+}
+% Summary: Develops Time Series Latency Probes (TSLP) method to detect congestion on thousands
+% of interdomain links without direct access. Uses latency measurements to detect persistent
+% diurnal congestion patterns. Deployed at 86 vantage points worldwide (CAIDA Ark). Studies
+% 8 large U.S. broadband providers (March 2016-December 2017). Found congestion was not
+% widespread but some links showed recurring patterns. Validates against ground-truth from
+% two providers.
+% M-LAB MENTION: YES - Paper uses M-Lab traceroute data from November-December 2017 to
+% analyze path symmetry for three specific links (Comcast-Tata, Comcast-NTT, CenturyLink-Cogent).
+% Also validates TSLP inferences by correlating with YouTube streaming performance metrics
+% collected from SamKnows and Ark vantage points.
+
+@inproceedings{Marder2018bdrmapIT,
+  author = {Alexander Marder and Matthew Luckie and Amogh Dhamdhere and Bradley Huffaker and kc claffy and Jonathan M. Smith},
+  title = {Pushing the Boundaries with bdrmapIT: Mapping Router Ownership at Internet Scale},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2018},
+  pages = {56--69},
+  month = {October},
+  doi = {10.1145/3278532.3278538},
+  url = {https://dl.acm.org/doi/10.1145/3278532.3278538}
+}
+% Summary: Combines bdrmap and MAP-IT approaches to create bdrmapIT - more complete and accurate
+% solution for inferring network boundaries from massive archived traceroute collections.
+% Handles traceroutes from many different networks (not just single network like bdrmap).
+% Improves router ownership inference at ends of traceroute paths. Enables large-scale
+% interdomain link identification crucial for understanding Internet interconnection structure
+% and detecting congestion at scale across the entire Internet topology.
+% M-LAB MENTION: No direct M-Lab mention but methodology enables analysis of M-Lab traceroutes.
+
+@inproceedings{Mok2018youtube,
+  author = {Ricky K. P. Mok and Vaibhav Bajpai and Amogh Dhamdhere and kc Claffy},
+  title = {Revealing the Load Balancing Behavior of YouTube Traffic on Interdomain Links},
+  booktitle = {Proceedings of the Passive and Active Measurement Conference (PAM)},
+  year = {2018},
+  pages = {106--118},
+  doi = {10.1007/978-3-319-76481-8_8},
+  url = {https://link.springer.com/chapter/10.1007/978-3-319-76481-8_8}
+}
+% Summary: Uses traceroute-based methods to infer how YouTube requests are assigned to specific
+% Google video content caches and interconnection links between access providers and Google.
+% Analyzes one year of measurements (mid-2016 to mid-2017) from SamKnows probes in major U.S.
+% ISP and three European ISPs. Investigates causes of different interdomain link usage behavior.
+% Finds video cache selection has little impact on BGP interdomain link selection - load
+% balancing happens at different layer. Important for understanding how application-level
+% decisions interact with network-level congestion.
+% M-LAB MENTION: No direct use of M-Lab data for this study.
+
+@inproceedings{Gill2019mlab,
+  author = {Phillipa Gill and Sara Landström and Anushka Bhatt and Aydan Morder and Anna Sperotto and Roland van Rijswijk-Deij},
+  title = {{M-Lab}: User Initiated Internet Data for the Research Community},
+  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
+  year = {2019},
+  doi = {10.1145/3355369.3355595},
+  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
+}
+% Academic description of M-Lab platform for the research community. Notes M-Lab's
+% "connectivity strategy stems from M-Lab's initial goal of ensuring measurements from an
+% end user will cross at least one interconnection" -- this is the most direct statement that
+% crossing interconnections is an explicit architectural goal, not merely a side effect.
+% Describes M-Lab as focused on transit providers "that do not have significant connectivity
+% to Internet users (i.e., avoiding eyeball networks)." Explains how this makes M-Lab
+% suitable for interconnection research that other platforms cannot support.
+
+@misc{CAIDA2020manic,
+  author = {{CAIDA}},
+  title = {Measurement and ANalysis of Internet Congestion (MANIC) Project},
+  year = {2020},
+  url = {https://www.caida.org/projects/manic/},
+  note = {Dataset of interdomain congestion using TSLP method from Ark vantage points}
+}
+% Summary: CAIDA project providing prototype system and web service to monitor interdomain
+% links and their congestion state. Uses Time-Sequence Latency Probing (TSLP) method from
+% Ark vantage points after running bdrmap to infer IP links between ASes. Provides empirical
+% grounding for interdomain congestion debates. Dataset collected continuously since 2016.
+% Plans integration with CAIDA's AS Rank platform for complex queries of Internet
+% interconnection infrastructure. Public dataset available for research use.
+% M-LAB MENTION: No direct connection but provides complementary congestion measurement
+% infrastructure that can be compared with M-Lab approaches.
+
+@techreport{Clark2021ndt,
+  author = {David Clark and Sara Wedeman},
+  title = {Measurement, Meaning and Purpose: Exploring the {M-Lab} {NDT} Dataset},
+  institution = {MIT CSAIL},
+  year = {2021},
+  month = aug,
+  url = {https://ssrn.com/abstract=3898339},
+  note = {SSRN working paper}
+}
+% Comprehensive exploration of the M-Lab NDT dataset, its history, appropriate uses,
+% and limitations. Traces NDT's evolution through three generations (Web100, NDT5, NDT7)
+% with different TCP congestion control algorithms (Reno, Cubic, BBR). Emphasizes that
+% NDT was originally a diagnostic tool, not a speed test, and that its crowdsourced data
+% "measures human behavior" as much as network speed. Discusses pitfalls of using aggregate
+% NDT data for policy conclusions, challenges of longitudinal analysis across protocol
+% changes, and the tension between M-Lab's diagnostic origins and its use for broadband
+% benchmarking. Highly relevant context for understanding what NDT data can and cannot show.
+
+@inproceedings{Carisimo2022jitterbug,
+  author = {Esteban Carisimo and Ricky K. P. Mok and David D. Clark and K. C. Claffy},
+  title = {Jitterbug: A New Framework for Jitter-Based Congestion Inference},
+  booktitle = {Passive and Active Measurement Conference (PAM)},
+  year = {2022},
+  pages = {155--179},
+  series = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  doi = {10.1007/978-3-030-98785-5_7},
+  url = {https://www.caida.org/catalog/papers/2022_jitterbug/}
+}
+% Summary: Introduces Jitterbug framework for detecting congestion using jitter analysis rather
+% than just RTT. Addresses limitation of TSLP which focuses on recurring diurnal congestion but
+% misses one-off events. Uses change point detection on minimum RTT and jitter time series to
+% distinguish congestion from other anomalies (like route changes). Applies Kolmogorov-Smirnov
+% test to detect jitter regime changes. Shows strong congruity with TSLP for recurrent congestion
+% but also detects one-off congestion events that TSLP misses. Validated against MANIC platform
+% data from 13 Ark monitors hosted in 6 U.S. ISPs to 18 far-side ASes (2017-2020).
+% M-LAB MENTION: No direct mention of M-Lab data usage.
+
+@misc{SamKnows,
+  author = {{SamKnows Limited}},
+  title = {{SamKnows} -- The Global Standard for Internet Measurement},
+  year = {2023},
+  url = {https://web.archive.org/web/20230707223136/https://www.samknows.com/},
+  note = {Measurement platform used in FCC's Measuring Broadband America program. Company acquired by Cisco Systems, Inc., 2023}
+}
+
+@misc{mlab2023position,
+  author    = {Lai Yi Ohlsen and Pavlos Sermpezis},
+  title     = {IAB 2023 Position Paper: Measuring Internet Quality},
+  year      = {2023},
+  url       = {https://www.ietf.org/slides/slides-biasws-m-lab-position-paper-01.pdf},
+  note      = {States the requirement for "publicly available, independently verifiable data" to evaluate internet quality}
+}
+% M-Lab position paper presented at the IAB workshop on measuring Internet quality.
+% Argues that Internet quality measurement must be based on publicly available,
+% independently verifiable data to support meaningful policy and consumer advocacy.
+% Discusses M-Lab's role in providing open measurement infrastructure and the
+% importance of measurement transparency for trust in broadband quality assessments.
+
+@misc{Ookla,
+  author = {Ookla},
+  title = {Speedtest by Ookla -- The Global Broadband Speed Test},
+  year = {2024},
+  url = {https://www.speedtest.net/},
+  note = {Commercial measurement platform using nearest-server selection}
+}
+
+@misc{MLab2024about,
+  author = {{Measurement Lab}},
+  title = {What is Measurement Lab?},
+  year = {2024},
+  url = {https://www.measurementlab.net/about/},
+  note = {Accessed February 2026}
+}
+% Official M-Lab mission statement page. Defines M-Lab as "a consortium of research,
+% industry, and public-interest partners dedicated to: Providing an open, verifiable measurement
+% platform for global network performance." This is the primary source for the "open and
+% verifiable" language. Also states goal of empowering "consumers, operators, regulators,
+% researchers, and civil society to understand the state and quality of the Internet."
+
+@misc{MLab2024advocacy,
+  author = {{Measurement Lab}},
+  title = {Using {M-Lab} Data in Broadband Advocacy and Policy},
+  year = {2024},
+  url = {https://www.measurementlab.net/blog/mlab-data-policy-advocacy/},
+  note = {Accessed February 2026}
+}
+% M-Lab's own description of what their measurements cover. Explicitly states:
+% "Our goal is to measure a user's whole experience of the Internet." Discusses server placement
+% philosophy: off-net servers measure "more than the last-mile network by design" and are
+% explicitly suited for measuring "the 'inter' part of the Internet or the interconnections
+% between providers." Contrasts M-Lab's approach with Ookla's on-net methodology. Directly
+% supports the claim that interconnection quality is within M-Lab's intended measurement scope.
+
+@article{Pi2024congi,
+  author = {Yibo Pi and Balakrishnan Chandrasekaran and Ítalo Cunha and Ethan Katz-Bassett},
+  title = {Measuring Congestion-Induced Performance Imbalance in Internet Load Balancing at Scale},
+  journal = {Computer Networks},
+  year = {2024},
+  volume = {238},
+  pages = {110098},
+  month = {January},
+  doi = {10.1016/j.comnet.2023.110098},
+  url = {https://doi.org/10.1016/j.comnet.2023.110098}
+}
+% Summary: First large-scale study of congestion imbalance among Internet load-balanced (LB) paths.
+% Presents Congi, lightweight prober using SVM classifiers to detect congestion imbalance from
+% latency samples. Distinguishes uncongested paths from congested ones (3x greater throughput,
+% 0.4% lower loss on uncongested). Focuses on detecting when LB paths experience different
+% congestion levels due to congestion-oblivious hashing algorithms. Complements datacenter
+% congestion imbalance work by extending to Internet scale. Important for understanding how
+% load balancing interacts with congestion detection.
+% M-LAB MENTION: YES - Paper references M-Lab NDT as example measurement platform and discusses
+% its methodology in context of congestion measurement challenges.

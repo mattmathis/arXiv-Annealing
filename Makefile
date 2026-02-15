@@ -12,7 +12,7 @@ RAW = $(BUILD_DIR)/paper.wget
 TEX = $(BUILD_DIR)/paper.tex
 PDF = $(BUILD_DIR)/paper.pdf
 BIB = refs.bib
-DRAFTS = "$(HOME)/Downloads/drafts/Anealing.pdf"
+DRAFTS = "$(HOME)/Downloads/drafts/Annealing.pdf"
 
 .PHONY: all fetch convert pdf clean
 

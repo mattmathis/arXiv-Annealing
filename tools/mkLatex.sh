@@ -7,7 +7,6 @@ TMP="${BASE_NAME}.tmp"
 TEX="${BASE_NAME}.tex"
 
 set -e
-set -x
 
 echo "Generating $TEX from $SRC, using $TMP"
 

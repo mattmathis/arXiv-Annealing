@@ -5,6 +5,198 @@
 % USED REFERENCES (in document order)
 % ============================================================================
 
+@article{Dovrolis2010mlab,
+  author = {Constantine Dovrolis and Kim Gettys and John Hamre and Chris Ritzo and Paul Samaras and Russ Stroud and Todd Underwood},
+  title = {Measurement Lab: Overview and an Invitation to the Research Community},
+  journal = {ACM SIGCOMM Computer Communication Review},
+  volume = {40},
+  number = {3},
+  pages = {53--56},
+  year = {2010},
+  month = {July},
+  doi = {10.1145/1823844.1823853},
+  url = {https://dl.acm.org/doi/10.1145/1823844.1823853}
+}
+% Original peer-reviewed overview of M-Lab platform, goals, and infrastructure.
+% States: "The goal of M-Lab is to advance network research and empower the public with
+% useful information about their broadband connections. By enhancing Internet transparency,
+% M-Lab helps sustain a healthy, innovative Internet." Describes M-Lab's server placement
+% in transit networks as a deliberate architectural choice to measure paths that cross
+% interconnections. This is the primary academic citation for M-Lab's founding mission.
+
+@inproceedings{Gill2019mlab,
+  author = {Phillipa Gill and Sara Landström and Anushka Bhatt and Aydan Morder and Anna Sperotto and Roland van Rijswijk-Deij},
+  title = {{M-Lab}: User Initiated Internet Data for the Research Community},
+  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
+  year = {2019},
+  doi = {10.1145/3355369.3355595},
+  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
+}
+% Academic description of M-Lab platform for the research community. Notes M-Lab's
+% "connectivity strategy stems from M-Lab's initial goal of ensuring measurements from an
+% end user will cross at least one interconnection" -- this is the most direct statement that
+% crossing interconnections is an explicit architectural goal, not merely a side effect.
+% Describes M-Lab as focused on transit providers "that do not have significant connectivity
+% to Internet users (i.e., avoiding eyeball networks)." Explains how this makes M-Lab
+% suitable for interconnection research that other platforms cannot support.
+
+@misc{MLab2024about,
+  author = {{Measurement Lab}},
+  title = {What is Measurement Lab?},
+  year = {2024},
+  url = {https://www.measurementlab.net/about/},
+  note = {Accessed February 2026}
+}
+% Official M-Lab mission statement page. Defines M-Lab as "a consortium of research,
+% industry, and public-interest partners dedicated to: Providing an open, verifiable measurement
+% platform for global network performance." This is the primary source for the "open and
+% verifiable" language. Also states goal of empowering "consumers, operators, regulators,
+% researchers, and civil society to understand the state and quality of the Internet."
+
+@inproceedings{Gigis2021hypergiants,
+  author = {Gigis, Petros and Calder, Matt and Manassakis, Lefteris and Nomikos, George and Kotronis, Vasileios and Dimitropoulos, Xenofontas and Katz-Bassett, Ethan and Smaragdakis, Georgios},
+  title = {{Seven Years in the Life of Hypergiants' Off-Nets}},
+  booktitle = {Proceedings of ACM SIGCOMM 2021},
+  pages = {516--533},
+  year = {2021},
+  doi = {10.1145/3452296.3472928},
+  url = {https://dl.acm.org/doi/10.1145/3452296.3472928},
+  note = {Best Paper Award}
+}
+% Documents massive expansion of hypergiant (Google, Facebook, Netflix, Akamai)
+% server deployments directly inside ISP networks (off-nets) from 2013-2021.
+% Google grew from 1,044 to 3,810 ASes; Facebook from zero to 2,214 ASes.
+% Empirically shows the shift from transit-based to embedded content delivery.
+
+@misc{MLab2024advocacy,
+  author = {{Measurement Lab}},
+  title = {Using {M-Lab} Data in Broadband Advocacy and Policy},
+  year = {2024},
+  url = {https://www.measurementlab.net/blog/mlab-data-policy-advocacy/},
+  note = {Accessed February 2026}
+}
+% M-Lab's own description of what their measurements cover. Explicitly states:
+% "Our goal is to measure a user's whole experience of the Internet." Discusses server placement
+% philosophy: off-net servers measure "more than the last-mile network by design" and are
+% explicitly suited for measuring "the 'inter' part of the Internet or the interconnections
+% between providers." Contrasts M-Lab's approach with Ookla's on-net methodology. Directly
+% supports the claim that interconnection quality is within M-Lab's intended measurement scope.
+
+@misc{wikiKSdistance,
+  author = {Kolmogorov, Andrey and Smirnov, Nikolai},
+  title = {Kolmogorov--Smirnov test},
+  year = {1948},
+  url = {https://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test},
+  note = {For accessible explanation of the KS distance statistic. Original papers: Kolmogorov (1933) and Smirnov (1948)}
+}
+
+@misc{MLab2025barchart,
+  author = {{M-Lab}},
+  title = {Global Metro Bar Chart -- Interactive Dashboard},
+  year = {2025},
+  url = {https://dashboards.measurementlab.net/d/20250110a/global-metro-bar-chart},
+  note = {Live interactive visualization of difference statistics across all M-Lab metros}
+}
+% Our live dashboard showing bar charts of worst-case difference statistics
+% (KS distance and geometric mean ratio) for every M-Lab metro.
+
+@misc{Cheshire1996latency,
+  author = {Cheshire, Stuart},
+  title = {It's the Latency, Stupid},
+  year = {1996},
+  url = {https://stuartcheshire.org/rants/Latency.html},
+  note = {Influential essay arguing that latency, not bandwidth, is the dominant factor in user-perceived Internet performance}
+}
+% Early and widely cited argument that latency matters more than throughput
+% for interactive applications. Makes the case that bandwidth is improving
+% faster than latency, so latency will increasingly dominate user experience.
+% Relevant context for our use of minRTT as a key diagnostic metric.
+
+@article{Gettys2012bufferbloat,
+  author = {Gettys, Jim and Nichols, Kathleen},
+  title = {Bufferbloat: Dark Buffers in the Internet},
+  journal = {Communications of the ACM},
+  volume = {55},
+  number = {1},
+  pages = {57--65},
+  year = {2012},
+  doi = {10.1145/2063176.2063196},
+  url = {https://dl.acm.org/doi/10.1145/2063176.2063196},
+  note = {Identifies excessive buffering throughout the Internet as a major source of latency}
+}
+% Describes how oversized buffers in routers, switches, and operating systems
+% cause massive latency spikes under load. Coined "bufferbloat" as a term for
+% the problem. Catalyzed the AQM/FQ movement (CoDel, fq_codel, CAKE). Relevant
+% to understanding why working-conditions latency differs from idle latency and
+% why our minRTT metric may understate user-experienced delays.
+
+@article{Briscoe2016reducing,
+  author = {Briscoe, Bob and Brunstrom, Anna and Petlund, Andreas and Hayes, David and Ros, David and Tsang, Jae and Gjessing, Stein and Fairhurst, Godred and Griwodz, Carsten and Welzl, Michael},
+  title = {Reducing Internet Latency: A Survey of Techniques and Their Merits},
+  journal = {IEEE Communications Surveys \& Tutorials},
+  volume = {18},
+  number = {3},
+  pages = {2149--2196},
+  year = {2016},
+  doi = {10.1109/COMST.2014.2375213},
+  url = {https://ieeexplore.ieee.org/document/6967689},
+  note = {Comprehensive survey of latency sources and mitigation techniques}
+}
+% Exhaustive survey cataloging sources of Internet latency and techniques to
+% reduce them. Covers queuing delay, propagation delay, protocol overhead, and
+% middlebox processing. Relevant context for interpreting the minRTT differences
+% our methodology uses to detect routing anomalies and hairpinning.
+
+@misc{MLab2025byos,
+  author = {{Measurement Lab}},
+  title = {{Host-Managed M-Lab Server Documentation}},
+  year = {2025},
+  url = {https://www.measurementlab.net/contribute/host-managed/},
+  note = {Accessed: 2026-02-15}
+}
+% Documents the BYOS (Bring Your Own Server) program allowing organizations to
+% host M-Lab measurement servers with their own infrastructure.
+
+% TODO MISSING: placeholder key in document
+@misc{TBD00bottlenecks,
+  author = {{TODO}},
+  title = {{TODO: bottleneck fingerprinting reference}},
+  year = {2025},
+  note = {PLACEHOLDER -- needs real entry}
+}
+
+@inproceedings{Luckie2010scamper,
+  author = {Luckie, Matthew},
+  title = {{Scamper: a Scalable and Extensible Packet Prober for Active Measurement of the Internet}},
+  booktitle = {Proceedings of the 10th ACM SIGCOMM Conference on Internet Measurement (IMC '10)},
+  year = {2010},
+  address = {Melbourne, Australia},
+  publisher = {ACM},
+  pages = {239--245},
+  doi = {10.1145/1879141.1879171},
+  url = {https://dl.acm.org/doi/10.1145/1879141.1879171}
+}
+% Describes scamper, a parallel packet prober supporting traceroute, ping, MDA,
+% alias resolution, and many other measurement primitives for IPv4 and IPv6.
+% Deployed in CAIDA's Ark topology measurement infrastructure.
+
+@misc{CAIDA2025scamper,
+  author = {{CAIDA}},
+  title = {{Scamper}},
+  year = {2025},
+  url = {https://www.caida.org/catalog/software/scamper/},
+  note = {Accessed: 2026-02-15}
+}
+% Official documentation, downloads, and man pages for scamper.
+
+@misc{IPPM,
+  author = {{IETF}},
+  title = {{IP} Performance Metrics ({IPPM}) Working Group},
+  year = {2025},
+  url = {https://datatracker.ietf.org/wg/ippm/about/},
+  note = {IETF working group chartered to develop standard metrics for Internet data delivery; active since 1997}
+}
+
 @techreport{RFC2330,
   author = {Paxson, Vern and Almes, Guy and Mahdavi, Jamshid and Mathis, Matt},
   title = {Framework for {IP} Performance Metrics},
@@ -17,6 +209,46 @@
   url = {https://www.rfc-editor.org/rfc/rfc2330},
   note = {Defines the foundational framework for Internet performance measurement; updated by RFCs 7312, 8468, 9198}
 }
+
+@article{Mathis1994mping,
+  author = {Mathis, Matt},
+  title = {{Windowed Ping: An IP Layer Performance Diagnostic}},
+  journal = {Computer Networks and ISDN Systems},
+  volume = {27},
+  number = {3},
+  pages = {449--459},
+  year = {1994},
+  url = {https://www.sciencedirect.com/science/article/abs/pii/0169755294901198}
+}
+% Uses a transport-style sliding window algorithm with ping/traceroute to sustain
+% packet queues in the network, directly measuring throughput, loss rates, and
+% queue size as functions of packet and window sizes.
+
+@inproceedings{Mathis1996TReno,
+  author = {Mathis, Matt and Mahdavi, Jamshid},
+  title = {{Diagnosing Internet Congestion with a Transport Layer Performance Tool}},
+  booktitle = {Proceedings of INET'96},
+  year = {1996},
+  address = {Montreal, Quebec, Canada}
+}
+% Introduces TReno (Traceroute Reno), which emulates Reno TCP over traceroute-like
+% UDP to measure bulk transfer capacity hop-by-hop, localizing congestion across
+% multi-provider paths. Influenced the TCP SACK specification.
+
+@inproceedings{Mathis2008NPAD,
+  author = {Mathis, Matt and Heffner, John and O'Neil, Peter and Siemsen, Paul},
+  title = {{Pathdiag: Automated TCP Diagnosis}},
+  booktitle = {Passive and Active Network Measurement (PAM 2008)},
+  series = {Lecture Notes in Computer Science},
+  volume = {4979},
+  publisher = {Springer},
+  year = {2008},
+  doi = {10.1007/978-3-540-79232-1_16},
+  url = {https://link.springer.com/chapter/10.1007/978-3-540-79232-1_16}
+}
+% Describes NPAD/pathdiag: one-click web-based diagnostic for TCP performance
+% problems using Web100 statistics and TCP models. Diagnoses duplex mismatch,
+% buffer tuning issues, and other common network flaws for non-expert users.
 
 @techreport{MLab2014interconnection,
   author = {{M-Lab Consortium}},
@@ -72,6 +304,26 @@
 % transparency is essential for maintaining these improvements. Companion to the
 % MLab2017monitoring blog post.
 
+@techreport{FCC2010broadband,
+  author = {{Federal Communications Commission}},
+  title = {{Connecting America: The National Broadband Plan}},
+  institution = {{Federal Communications Commission}},
+  year = {2010},
+  month = mar,
+  url = {https://www.fcc.gov/general/national-broadband-plan},
+  note = {Mandated by the American Recovery and Reinvestment Act of 2009; led to the Measuring Broadband America program}
+}
+% Released March 16, 2010. Set goals for broadband access and performance,
+% leading to the SamKnows-based MBA reports starting in 2011.
+
+@misc{wiki2025broadband,
+  author = {{Wikipedia contributors}},
+  title = {{National Broadband Plan (United States)}},
+  year = {2025},
+  url = {https://en.wikipedia.org/wiki/National_Broadband_Plan_(United_States)},
+  note = {Accessed: 2026-02-15}
+}
+
 @techreport{FCC2016broadband,
   author = {{Federal Communications Commission}},
   title = {2016 Measuring Broadband America Fixed Broadband Report},
@@ -80,6 +332,22 @@
   month = dec,
   url = {https://www.fcc.gov/reports-research/reports/measuring-broadband-america/measuring-fixed-broadband-2016},
   note = {Methodology explicitly focuses on access edge, excluding interconnection effects}
+}
+
+@misc{Ookla,
+  author = {Ookla},
+  title = {Speedtest by Ookla -- The Global Broadband Speed Test},
+  year = {2024},
+  url = {https://www.speedtest.net/},
+  note = {Commercial measurement platform using nearest-server selection}
+}
+
+@misc{SamKnows,
+  author = {{SamKnows Limited}},
+  title = {{SamKnows} -- The Global Standard for Internet Measurement},
+  year = {2023},
+  url = {https://web.archive.org/web/20230707223136/https://www.samknows.com/},
+  note = {Measurement platform used in FCC's Measuring Broadband America program. Company acquired by Cisco Systems, Inc., 2023}
 }
 
 @inproceedings{Goga2012speed,
@@ -115,6 +383,28 @@
 %   available bandwidth, making them indirect measurements of what ISPs guarantee
 % - Subject to TCP protocol limitations and congestion control behavior
 % - Performance depends heavily on client hardware/software capabilities
+
+@inproceedings{Bauer2010speed,
+  author = {Bauer, Steven and Clark, David and Lehr, William},
+  title = {{Understanding Broadband Speed Measurements}},
+  booktitle = {Proceedings of the 38th Research Conference on Communication, Information and Internet Policy (TPRC)},
+  year = {2010},
+  url = {https://groups.csail.mit.edu/ana/Publications/Understanding_broadband_speed_measurements_bauer_clark_lehr_TPRC_2010.pdf}
+}
+% Examines how broadband speed measurements vary significantly across testing
+% methodologies and conditions. Discusses challenges of attributing end-to-end
+% bottlenecks to constituent parts (home network, access, transit, server).
+
+@inproceedings{Bauer2016gigabit,
+  author = {Bauer, Steven and Lehr, William and Mou, Merry},
+  title = {{Improving the Measurement and Analysis of Gigabit Broadband Networks}},
+  booktitle = {Proceedings of the 44th Research Conference on Communication, Information and Internet Policy (TPRC)},
+  year = {2016},
+  doi = {10.2139/ssrn.2757050},
+  url = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2757050}
+}
+% Addresses how the shift to gigabit broadband poses new challenges for
+% performance measurement, user expectations, and regulatory policy.
 
 @misc{Feamster2019challenges,
   author = {Feamster, Nick and Livingood, Jason},
@@ -255,85 +545,6 @@
 % - Data requires sanitization before use for research
 % - Coverage differences across regions compared to CDN-based solutions
 
-@misc{MLab2025barchart,
-  author = {{M-Lab}},
-  title = {Global Metro Bar Chart -- Interactive Dashboard},
-  year = {2025},
-  url = {https://dashboards.measurementlab.net/d/20250110a/global-metro-bar-chart},
-  note = {Live interactive visualization of difference statistics across all M-Lab metros}
-}
-% Our live dashboard showing bar charts of worst-case difference statistics
-% (KS distance and geometric mean ratio) for every M-Lab metro.
-
-@article{Gettys2012bufferbloat,
-  author = {Gettys, Jim and Nichols, Kathleen},
-  title = {Bufferbloat: Dark Buffers in the Internet},
-  journal = {Communications of the ACM},
-  volume = {55},
-  number = {1},
-  pages = {57--65},
-  year = {2012},
-  doi = {10.1145/2063176.2063196},
-  url = {https://dl.acm.org/doi/10.1145/2063176.2063196},
-  note = {Identifies excessive buffering throughout the Internet as a major source of latency}
-}
-% Describes how oversized buffers in routers, switches, and operating systems
-% cause massive latency spikes under load. Coined "bufferbloat" as a term for
-% the problem. Catalyzed the AQM/FQ movement (CoDel, fq_codel, CAKE). Relevant
-% to understanding why working-conditions latency differs from idle latency and
-% why our minRTT metric may understate user-experienced delays.
-
-@article{Briscoe2016reducing,
-  author = {Briscoe, Bob and Brunstrom, Anna and Petlund, Andreas and Hayes, David and Ros, David and Tsang, Jae and Gjessing, Stein and Fairhurst, Godred and Griwodz, Carsten and Welzl, Michael},
-  title = {Reducing Internet Latency: A Survey of Techniques and Their Merits},
-  journal = {IEEE Communications Surveys \& Tutorials},
-  volume = {18},
-  number = {3},
-  pages = {2149--2196},
-  year = {2016},
-  doi = {10.1109/COMST.2014.2375213},
-  url = {https://ieeexplore.ieee.org/document/6967689},
-  note = {Comprehensive survey of latency sources and mitigation techniques}
-}
-% Exhaustive survey cataloging sources of Internet latency and techniques to
-% reduce them. Covers queuing delay, propagation delay, protocol overhead, and
-% middlebox processing. Relevant context for interpreting the minRTT differences
-% our methodology uses to detect routing anomalies and hairpinning.
-
-@techreport{BITAG2022latency,
-  author = {{Broadband Internet Technical Advisory Group}},
-  title = {Latency Explained},
-  institution = {{BITAG}},
-  year = {2022},
-  url = {http://www.bitag.org/documents/BITAG_latency_explained.pdf},
-  note = {Industry report explaining latency sources and their impact on broadband quality of experience}
-}
-% Comprehensive industry report arguing that consistently low latency matters
-% as much as throughput for quality of experience. Covers working latency,
-% buffering delay, AQM, and measurement methodologies. Aimed at policymakers
-% and industry; provides accessible context for why latency metrics matter.
-
-@misc{IPPM,
-  author = {{IETF}},
-  title = {{IP} Performance Metrics ({IPPM}) Working Group},
-  year = {2025},
-  url = {https://datatracker.ietf.org/wg/ippm/about/},
-  note = {IETF working group chartered to develop standard metrics for Internet data delivery; active since 1997}
-}
-
-@misc{IPPM2025responsiveness,
-  author = {Paasch, Christoph and Meyer, Randall and Cheshire, Stuart and Hawkins, Will},
-  title = {Responsiveness under Working Conditions},
-  year = {2025},
-  howpublished = {Internet-Draft draft-ietf-ippm-responsiveness-08},
-  url = {https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/},
-  note = {IETF IPPM working group draft defining the Responsiveness Test, measuring Round-trips Per Minute (RPM) under load}
-}
-% Defines a methodology for measuring network responsiveness while the network
-% is actively in use, expressed as RPM. Addresses the gap between idle latency
-% (what ping measures) and working latency (what users experience). Complements
-% bufferbloat research by providing a standardized measurement approach.
-
 % ============================================================================
 % UNUSED REFERENCES (chronological order, preserved for potential future use)
 % ============================================================================
@@ -363,26 +574,6 @@
 % Extends Kolmogorov's work to the two-sample case, enabling comparison of two
 % empirical distributions. This is the form of the KS test we actually use to
 % compare throughput distributions across different M-Lab servers.
-
-@misc{wikiKSdistance,
-  author = {Kolmogorov, Andrey and Smirnov, Nikolai},
-  title = {Kolmogorov--Smirnov test},
-  year = {1948},
-  url = {https://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test},
-  note = {For accessible explanation of the KS distance statistic. Original papers: Kolmogorov (1933) and Smirnov (1948)}
-}
-
-@misc{Cheshire1996latency,
-  author = {Cheshire, Stuart},
-  title = {It's the Latency, Stupid},
-  year = {1996},
-  url = {https://stuartcheshire.org/rants/Latency.html},
-  note = {Influential essay arguing that latency, not bandwidth, is the dominant factor in user-perceived Internet performance}
-}
-% Early and widely cited argument that latency matters more than throughput
-% for interactive applications. Makes the case that bandwidth is improving
-% faster than latency, so latency will increasingly dominate user experience.
-% Relevant context for our use of minRTT as a key diagnostic metric.
 
 @inproceedings{Faratin2007complexity,
   author = {Faratin, Peyman and Clark, David and Gilmore, Patrick and Bauer, Steven and Berger, Arthur and Lehr, William},
@@ -429,25 +620,6 @@
 % dense peering mesh, with content providers and large access networks
 % increasingly interconnecting directly. Provides structural context for why
 % mid-path performance varies so much across different ISP pairings.
-
-@article{Dovrolis2010mlab,
-  author = {Constantine Dovrolis and Kim Gettys and John Hamre and Chris Ritzo and Paul Samaras and Russ Stroud and Todd Underwood},
-  title = {Measurement Lab: Overview and an Invitation to the Research Community},
-  journal = {ACM SIGCOMM Computer Communication Review},
-  volume = {40},
-  number = {3},
-  pages = {53--56},
-  year = {2010},
-  month = {July},
-  doi = {10.1145/1823844.1823853},
-  url = {https://dl.acm.org/doi/10.1145/1823844.1823853}
-}
-% Original peer-reviewed overview of M-Lab platform, goals, and infrastructure.
-% States: "The goal of M-Lab is to advance network research and empower the public with
-% useful information about their broadband connections. By enhancing Internet transparency,
-% M-Lab helps sustain a healthy, innovative Internet." Describes M-Lab's server placement
-% in transit networks as a deliberate architectural choice to measure paths that cross
-% interconnections. This is the primary academic citation for M-Lab's founding mission.
 
 @inproceedings{Ihm2011understanding,
   author = {Ihm, Sunghwan and Pai, Vivek S.},
@@ -696,22 +868,6 @@
 % decisions interact with network-level congestion.
 % M-LAB MENTION: No direct use of M-Lab data for this study.
 
-@inproceedings{Gill2019mlab,
-  author = {Phillipa Gill and Sara Landström and Anushka Bhatt and Aydan Morder and Anna Sperotto and Roland van Rijswijk-Deij},
-  title = {{M-Lab}: User Initiated Internet Data for the Research Community},
-  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
-  year = {2019},
-  doi = {10.1145/3355369.3355595},
-  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
-}
-% Academic description of M-Lab platform for the research community. Notes M-Lab's
-% "connectivity strategy stems from M-Lab's initial goal of ensuring measurements from an
-% end user will cross at least one interconnection" -- this is the most direct statement that
-% crossing interconnections is an explicit architectural goal, not merely a side effect.
-% Describes M-Lab as focused on transit providers "that do not have significant connectivity
-% to Internet users (i.e., avoiding eyeball networks)." Explains how this makes M-Lab
-% suitable for interconnection research that other platforms cannot support.
-
 @misc{CAIDA2020manic,
   author = {{CAIDA}},
   title = {Measurement and ANalysis of Internet Congestion (MANIC) Project},
@@ -746,6 +902,19 @@
 % changes, and the tension between M-Lab's diagnostic origins and its use for broadband
 % benchmarking. Highly relevant context for understanding what NDT data can and cannot show.
 
+@techreport{BITAG2022latency,
+  author = {{Broadband Internet Technical Advisory Group}},
+  title = {Latency Explained},
+  institution = {{BITAG}},
+  year = {2022},
+  url = {http://www.bitag.org/documents/BITAG_latency_explained.pdf},
+  note = {Industry report explaining latency sources and their impact on broadband quality of experience}
+}
+% Comprehensive industry report arguing that consistently low latency matters
+% as much as throughput for quality of experience. Covers working latency,
+% buffering delay, AQM, and measurement methodologies. Aimed at policymakers
+% and industry; provides accessible context for why latency metrics matter.
+
 @inproceedings{Carisimo2022jitterbug,
   author = {Esteban Carisimo and Ricky K. P. Mok and David D. Clark and K. C. Claffy},
   title = {Jitterbug: A New Framework for Jitter-Based Congestion Inference},
@@ -766,14 +935,6 @@
 % data from 13 Ark monitors hosted in 6 U.S. ISPs to 18 far-side ASes (2017-2020).
 % M-LAB MENTION: No direct mention of M-Lab data usage.
 
-@misc{SamKnows,
-  author = {{SamKnows Limited}},
-  title = {{SamKnows} -- The Global Standard for Internet Measurement},
-  year = {2023},
-  url = {https://web.archive.org/web/20230707223136/https://www.samknows.com/},
-  note = {Measurement platform used in FCC's Measuring Broadband America program. Company acquired by Cisco Systems, Inc., 2023}
-}
-
 @misc{mlab2023position,
   author    = {Lai Yi Ohlsen and Pavlos Sermpezis},
   title     = {IAB 2023 Position Paper: Measuring Internet Quality},
@@ -786,41 +947,6 @@
 % independently verifiable data to support meaningful policy and consumer advocacy.
 % Discusses M-Lab's role in providing open measurement infrastructure and the
 % importance of measurement transparency for trust in broadband quality assessments.
-
-@misc{Ookla,
-  author = {Ookla},
-  title = {Speedtest by Ookla -- The Global Broadband Speed Test},
-  year = {2024},
-  url = {https://www.speedtest.net/},
-  note = {Commercial measurement platform using nearest-server selection}
-}
-
-@misc{MLab2024about,
-  author = {{Measurement Lab}},
-  title = {What is Measurement Lab?},
-  year = {2024},
-  url = {https://www.measurementlab.net/about/},
-  note = {Accessed February 2026}
-}
-% Official M-Lab mission statement page. Defines M-Lab as "a consortium of research,
-% industry, and public-interest partners dedicated to: Providing an open, verifiable measurement
-% platform for global network performance." This is the primary source for the "open and
-% verifiable" language. Also states goal of empowering "consumers, operators, regulators,
-% researchers, and civil society to understand the state and quality of the Internet."
-
-@misc{MLab2024advocacy,
-  author = {{Measurement Lab}},
-  title = {Using {M-Lab} Data in Broadband Advocacy and Policy},
-  year = {2024},
-  url = {https://www.measurementlab.net/blog/mlab-data-policy-advocacy/},
-  note = {Accessed February 2026}
-}
-% M-Lab's own description of what their measurements cover. Explicitly states:
-% "Our goal is to measure a user's whole experience of the Internet." Discusses server placement
-% philosophy: off-net servers measure "more than the last-mile network by design" and are
-% explicitly suited for measuring "the 'inter' part of the Internet or the interconnections
-% between providers." Contrasts M-Lab's approach with Ookla's on-net methodology. Directly
-% supports the claim that interconnection quality is within M-Lab's intended measurement scope.
 
 @article{Pi2024congi,
   author = {Yibo Pi and Balakrishnan Chandrasekaran and Ítalo Cunha and Ethan Katz-Bassett},
@@ -842,3 +968,16 @@
 % load balancing interacts with congestion detection.
 % M-LAB MENTION: YES - Paper references M-Lab NDT as example measurement platform and discusses
 % its methodology in context of congestion measurement challenges.
+
+@misc{IPPM2025responsiveness,
+  author = {Paasch, Christoph and Meyer, Randall and Cheshire, Stuart and Hawkins, Will},
+  title = {Responsiveness under Working Conditions},
+  year = {2025},
+  howpublished = {Internet-Draft draft-ietf-ippm-responsiveness-08},
+  url = {https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/},
+  note = {IETF IPPM working group draft defining the Responsiveness Test, measuring Round-trips Per Minute (RPM) under load}
+}
+% Defines a methodology for measuring network responsiveness while the network
+% is actively in use, expressed as RPM. Addresses the gap between idle latency
+% (what ping measures) and working latency (what users experience). Complements
+% bufferbloat research by providing a standardized measurement approach.

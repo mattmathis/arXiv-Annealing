@@ -45,6 +45,9 @@ pdf: convert
 	cp $(PDF) $(DRAFTS)
 	@echo ""
 
+todo:
+	@cd $(BUILD_DIR) && sed -n 's;.*\(\[@@.*\);\1;p' paper.tex
+
 clean:
 	@rm -rf $(BUILD_DIR)/*
 	@echo "Build directory cleaned"

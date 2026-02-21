@@ -82,6 +82,19 @@
 % between providers." Contrasts M-Lab's approach with Ookla's on-net methodology. Directly
 % supports the claim that interconnection quality is within M-Lab's intended measurement scope.
 
+@inproceedings{Carlson2003NDT,
+  author = {Richard Carlson},
+  title = {Developing the {Web100} Based Network Diagnostic Tool ({NDT})},
+  booktitle = {Passive and Active Measurement Workshop (PAM)},
+  year = {2003},
+  address = {San Diego, CA},
+  month = {April},
+  url = {https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=ab91101970a37a5b962e69cf20fdad9bde442e62}
+}
+% Original description of NDT, a client/server tool that uses Web100 kernel
+% instrumentation to measure TCP performance, compute theoretical throughput, and
+% diagnose network configuration problems such as duplex mismatch.
+
 @misc{wikiKSdistance,
   author = {Kolmogorov, Andrey and Smirnov, Nikolai},
   title = {Kolmogorov--Smirnov test},
@@ -956,8 +969,7 @@
   volume = {238},
   pages = {110098},
   month = {January},
-  doi = {10.1016/j.comnet.2023.110098},
-  url = {https://doi.org/10.1016/j.comnet.2023.110098}
+  doi = {10.1016/j.comnet.2023.110098}
 }
 % Summary: First large-scale study of congestion imbalance among Internet load-balanced (LB) paths.
 % Presents Congi, lightweight prober using SVM classifiers to detect congestion imbalance from
@@ -981,3 +993,15 @@
 % is actively in use, expressed as RPM. Addresses the gap between idle latency
 % (what ping measures) and working latency (what users experience). Complements
 % bufferbloat research by providing a standardized measurement approach.
+
+
+@misc{carlson2003NDTcode,
+  author       = {Carlson, Richard A.},
+  title        = {Web100-based Network Diagnostic Tool},
+  annote       = {NDT is a client/server based network diagnostic tool developed to aid in finding network performance and configuration problems. The tool measures data transfer rates between two internet hosts (client and server). It also gathers detailed TCP statistical variable counters supplied by the Web100 modified server and uses these TCP variables to compute the theoretical performance rate between the two internet hosts.  It then compares these analytical results with the measured results to determine if performance or configuration problems exist and translates these results into plain text messages to aid users and network operators in resolving reported problems.},
+  url          = {https://www.osti.gov/biblio/1230645},
+  place        = {United States},
+  year         = {2003},
+  month        = {03}}
+
+

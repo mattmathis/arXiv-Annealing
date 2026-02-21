@@ -27,8 +27,11 @@ sed -i '/DOCSTART/c\
 \
 % \\usepackage{unsrt}\
 % \\usepackage[style=numeric, sorting=none, url=true, doi=true, backend=biber]{biblatex}\
+\\usepackage[numbers,sort&compress]{natbib}\
 \\usepackage{url}  % for proper URL formatting\
+% doi package removed: unsrtnat.bst handles DOI natively\
 \\usepackage{graphicx}\
+\\usepackage{subcaption}\
 \\usepackage{hyperref} % for links within the document\
 \
 \\title{Detecting Anomalous Topology, Routing Policies, and Congested Interconnections at Internet Scale}\

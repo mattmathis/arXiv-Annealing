@@ -35,7 +35,7 @@ sed -i '/DOCSTART/c\
 \\usepackage{hyperref} % for links within the document\
 \
 \\title{Detecting Anomalous Topology, Routing Policies, and Congested Interconnections at Internet Scale}\
-\\author{Matt Mathis}\
+\\author{Matt Mathis\\thanks{Independent Researcher volunteering at Measurement Lab}}\
 \
 \\begin{document}\
 \\maketitle\

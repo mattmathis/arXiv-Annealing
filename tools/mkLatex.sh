@@ -32,10 +32,13 @@ sed -i '/DOCSTART/c\
 % doi package removed: unsrtnat.bst handles DOI natively\
 \\usepackage{graphicx}\
 \\usepackage{subcaption}\
+\\usepackage{draftwatermark}\
+\\SetWatermarkScale{4}\
+\\SetWatermarkColor[gray]{0.9}\
 \\usepackage{hyperref} % for links within the document\
 \
 \\title{Detecting Anomalous Topology, Routing Policies, and Congested Interconnections at Internet Scale}\
-\\author{Matt Mathis\\thanks{Independent Researcher volunteering at Measurement Lab}}\
+\\author{Matt Mathis\\thanks{Independent Researcher and contributor volunteering at Measurement Lab}}\
 \
 \\begin{document}\
 \\maketitle\
@@ -44,7 +47,7 @@ sed -i '/DOCSTART/c\
 
 # Show the buildtime
 d=$(date)
-sed -i "s;BUILDTIME;Built: $d;" "$TMP"
+sed -i "s;BUILDTIME;Draft Built: $d;" "$TMP"
 
 # Citations, [@NameYYkeyword,NameYYYYkeyword]
 sed -i 's;\[@\([,a-zA-Z0-9]*\)\];\\cite{\1};g' "${TMP}"

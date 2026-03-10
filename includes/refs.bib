@@ -6,14 +6,14 @@
 % ============================================================================
 
 @article{Dovrolis2010mlab,
-  author = {Constantine Dovrolis and Kim Gettys and John Hamre and Chris Ritzo and Paul Samaras and Russ Stroud and Todd Underwood},
+  author = {Constantine Dovrolis and Krishna Gummadi and Aleksandar Kuzmanovic and Sascha D. Meinrath},
   title = {{Measurement Lab}: Overview and an invitation to the research community},
   journal = {ACM SIGCOMM Computer Communication Review},
   volume = {40},
   number = {3},
   pages = {53--56},
   year = {2010},
-  month = {July},
+  month = {June},
   doi = {10.1145/1823844.1823853},
   url = {https://dl.acm.org/doi/10.1145/1823844.1823853}
 }
@@ -24,13 +24,24 @@
 % in transit networks as a deliberate architectural choice to measure paths that cross
 % interconnections. This is the primary academic citation for M-Lab's founding mission.
 
+@misc{Ohlsen2021advocacy,
+  author = {Lai Yi Ohlsen and Greg Russell and Stephen Soltesz},
+  title = {Using {M-Lab} Data in Broadband Advocacy and Policy},
+  year = {2021},
+  month = {February},
+  day = {17},
+  howpublished = {Measurement Lab blog},
+  url = {https://www.measurementlab.net/blog/mlab-data-policy-advocacy/},
+  note = {Accessed March 2026}
+}
+
 @inproceedings{Gill2019mlab,
   author = {Phillipa Gill and Sara Landström and Anushka Bhatt and Aydan Morder and Anna Sperotto and Roland van Rijswijk-Deij},
   title = {{M-Lab}: User initiated {Internet} data for the research community},
   booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
   year = {2019},
-  doi = {10.1145/3355369.3355595},
-  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
+  doi = {10.1145/3523230.3523236},
+  url = {https://dl.acm.org/doi/10.1145/3523230.3523236}
 }
 % Academic description of M-Lab platform for the research community. Notes M-Lab's
 % "connectivity strategy stems from M-Lab's initial goal of ensuring measurements from an
@@ -52,6 +63,24 @@
 % platform for global network performance." This is the primary source for the "open and
 % verifiable" language. Also states goal of empowering "consumers, operators, regulators,
 % researchers, and civil society to understand the state and quality of the Internet."
+
+@inproceedings{Labovitz2010interdomain,
+  author = {Craig Labovitz and Scott Iekel-Johnson and Danny McPherson and Jon Oberheide and Farnam Jahanian},
+  title = {Internet inter-domain traffic},
+  booktitle = {Proceedings of the ACM SIGCOMM 2010 Conference},
+  year = {2010},
+  month = {August},
+  address = {New Delhi, India},
+  pages = {75--86},
+  doi = {10.1145/1851182.1851194},
+  url = {https://dl.acm.org/doi/10.1145/1851182.1851194},
+  note = {ACM SIGCOMM Test of Time Award 2021}
+}
+% Coined the term "hypergiants" for the small number of massive content providers
+% (Google, Facebook, Netflix, Akamai, etc.) that dominate inter-domain traffic.
+% Analyzed 200+ exabytes of traffic from 110 networks over two years, finding that
+% traffic concentration in hypergiants fundamentally reshaped Internet interconnection
+% structure -- the foundation for Gigis2021hypergiants and related work.
 
 @inproceedings{Gigis2021hypergiants,
   author = {Gigis, Petros and Calder, Matt and Manassakis, Lefteris and Nomikos, George and Kotronis, Vasileios and Dimitropoulos, Xenofontas and Katz-Bassett, Ethan and Smaragdakis, Georgios},
@@ -169,14 +198,6 @@
 }
 % Documents the BYOS (Bring Your Own Server) program allowing organizations to
 % host M-Lab measurement servers with their own infrastructure.
-
-% TODO MISSING: placeholder key in document
-@misc{TBD00bottlenecks,
-  author = {{TODO}},
-  title = {{TODO: bottleneck fingerprinting reference}},
-  year = {2025},
-  note = {PLACEHOLDER -- needs real entry}
-}
 
 @inproceedings{Luckie2010scamper,
   author = {Luckie, Matthew},
@@ -428,8 +449,8 @@
   primaryClass = {cs.NI},
   doi = {10.48550/arXiv.1905.02334},
   url = {https://arxiv.org/abs/1905.02334},
-  note = {Critical review of measurement methodologies; identifies M-Lab's interconnection sensitivity as problematic}
 }
+% note = {Critical review of measurement methodologies; identifies M-Lab's interconnection sensitivity as problematic}
 
 @article{Feamster2020challenges,
   author = {Feamster, Nick and Livingood, Jason},
@@ -441,8 +462,8 @@
   year = {2020},
   doi = {10.1145/3372135},
   url = {https://dl.acm.org/doi/10.1145/3372135},
-  note = {Revised and expanded version for broader audience}
 }
+% note = {Revised and expanded version for broader audience}
 % PAPER SUMMARY:
 % Comprehensive review of Internet speed testing methods, their limitations, and
 % recommendations for next-generation measurement approaches. Discusses how speed
@@ -812,8 +833,8 @@
   year = {2017},
   pages = {64--77},
   month = {November},
-  doi = {10.1145/3278532.3278566},
-  url = {https://dl.acm.org/doi/10.1145/3278532.3278566}
+  doi = {10.1145/3131365.3131381},
+  url = {https://dl.acm.org/doi/10.1145/3131365.3131381}
 }
 % Summary: Develops technique to distinguish self-induced congestion from external (pre-existing)
 % congestion using TCP flow RTT characteristics during slow start. Two statistical metrics from
@@ -1003,5 +1024,26 @@
   place        = {United States},
   year         = {2003},
   month        = {03}}
+
+
+@inproceedings{Richter2019scanning,
+  author = {Philipp Richter and Arthur Berger and Steven J. others},
+  title = {Scanning the Scanners},
+  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
+  year = {2019},
+  pages = {144--157},
+  doi = {10.1145/3355369.3355595},
+  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
+}
+
+@inproceedings{Meza2018datacenter,
+  author = {Justin Meza and Tianyin Xu and Kaushik Veeraraghavan and Onur Mutlu and others},
+  title = {A Large Scale Study of Data Center Network Reliability},
+  booktitle = {Proceedings of the Internet Measurement Conference (IMC)},
+  year = {2018},
+  pages = {393--407},
+  doi = {10.1145/3278532.3278566},
+  url = {https://dl.acm.org/doi/10.1145/3278532.3278566}
+}
 
 

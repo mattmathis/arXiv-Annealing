@@ -32,6 +32,7 @@ sed -i '/DOCSTART/c\
 % doi package removed: unsrtnat.bst handles DOI natively\
 \\usepackage{graphicx}\
 \\usepackage{subcaption}\
+\\captionsetup{font=small, labelfont=bf}\
 \\usepackage{draftwatermark}\
 \\SetWatermarkScale{4}\
 \\SetWatermarkColor[gray]{0.9}\

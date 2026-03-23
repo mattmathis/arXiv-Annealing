@@ -28,7 +28,7 @@ sed -i '/DOCSTART/c\
 % \\usepackage{unsrt}\
 % \\usepackage[style=numeric, sorting=none, url=true, doi=true, backend=biber]{biblatex}\
 \\usepackage[numbers,sort&compress]{natbib}\
-\\usepackage{url}  % for proper URL formatting\
+\\usepackage[hyphens]{url}  % for proper URL formatting\
 % doi package removed: unsrtnat.bst handles DOI natively\
 \\usepackage{graphicx}\
 \\usepackage{subcaption}\

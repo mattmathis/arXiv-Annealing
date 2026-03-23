@@ -40,17 +40,6 @@
 % to Internet users (i.e., avoiding eyeball networks)." Explains how this makes M-Lab
 % suitable for interconnection research that other platforms cannot support.
 
-@misc{Ohlsen2021advocacy,
-  author = {Lai Yi Ohlsen and Greg Russell and Stephen Soltesz},
-  title = {Using {M-Lab} Data in Broadband Advocacy and Policy},
-  year = {2021},
-  month = {February},
-  day = {17},
-  howpublished = {Measurement Lab blog},
-  url = {https://www.measurementlab.net/blog/mlab-data-policy-advocacy/},
-  note = {Accessed March 2026}
-}
-
 @misc{MLab2024about,
   author = {{Measurement Lab}},
   title = {What is {Measurement Lab}?},
@@ -63,46 +52,6 @@
 % platform for global network performance." This is the primary source for the "open and
 % verifiable" language. Also states goal of empowering "consumers, operators, regulators,
 % researchers, and civil society to understand the state and quality of the Internet."
-
-@inproceedings{Carlson2003NDT,
-  author = {Richard Carlson},
-  title = {Developing the {Web100} based network diagnostic tool ({NDT})},
-  booktitle = {Passive and Active Measurement Workshop (PAM)},
-  year = {2003},
-  address = {San Diego, CA},
-  month = {April},
-  url = {https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=ab91101970a37a5b962e69cf20fdad9bde442e62}
-}
-% Original description of NDT, a client/server tool that uses Web100 kernel
-% instrumentation to measure TCP performance, compute theoretical throughput, and
-% diagnose network configuration problems such as duplex mismatch.
-
-@misc{carlson2003NDTcode,
-  author       = {Carlson, Richard A.},
-  title        = {{Web100}-based network diagnostic tool},
-  annote       = {NDT is a client/server based network diagnostic tool developed to aid in finding network performance and configuration problems. The tool measures data transfer rates between two internet hosts (client and server). It also gathers detailed TCP statistical variable counters supplied by the Web100 modified server and uses these TCP variables to compute the theoretical performance rate between the two internet hosts.  It then compares these analytical results with the measured results to determine if performance or configuration problems exist and translates these results into plain text messages to aid users and network operators in resolving reported problems.},
-  url          = {https://www.osti.gov/biblio/1230645},
-  place        = {United States},
-  year         = {2003},
-  month        = {03}}
-
-@inproceedings{Labovitz2010interdomain,
-  author = {Craig Labovitz and Scott Iekel-Johnson and Danny McPherson and Jon Oberheide and Farnam Jahanian},
-  title = {Internet inter-domain traffic},
-  booktitle = {Proceedings of the ACM SIGCOMM 2010 Conference},
-  year = {2010},
-  month = {August},
-  address = {New Delhi, India},
-  pages = {75--86},
-  doi = {10.1145/1851182.1851194},
-  url = {https://dl.acm.org/doi/10.1145/1851182.1851194},
-  note = {ACM SIGCOMM Test of Time Award 2021}
-}
-% Coined the term "hypergiants" for the small number of massive content providers
-% (Google, Facebook, Netflix, Akamai, etc.) that dominate inter-domain traffic.
-% Analyzed 200+ exabytes of traffic from 110 networks over two years, finding that
-% traffic concentration in hypergiants fundamentally reshaped Internet interconnection
-% structure -- the foundation for Gigis2021hypergiants and related work.
 
 @inproceedings{Gigis2021hypergiants,
   author = {Gigis, Petros and Calder, Matt and Manassakis, Lefteris and Nomikos, George and Kotronis, Vasileios and Dimitropoulos, Xenofontas and Katz-Bassett, Ethan and Smaragdakis, Georgios},
@@ -118,6 +67,33 @@
 % server deployments directly inside ISP networks (off-nets) from 2013-2021.
 % Google grew from 1,044 to 3,810 ASes; Facebook from zero to 2,214 ASes.
 % Empirically shows the shift from transit-based to embedded content delivery.
+
+@misc{MLab2024advocacy,
+  author = {{Measurement Lab}},
+  title = {Using {M-Lab} data in broadband advocacy and policy},
+  year = {2024},
+  url = {https://www.measurementlab.net/blog/mlab-data-policy-advocacy/},
+  note = {Accessed February 2026}
+}
+% M-Lab's own description of what their measurements cover. Explicitly states:
+% "Our goal is to measure a user's whole experience of the Internet." Discusses server placement
+% philosophy: off-net servers measure "more than the last-mile network by design" and are
+% explicitly suited for measuring "the 'inter' part of the Internet or the interconnections
+% between providers." Contrasts M-Lab's approach with Ookla's on-net methodology. Directly
+% supports the claim that interconnection quality is within M-Lab's intended measurement scope.
+
+@inproceedings{Carlson2003NDT,
+  author = {Richard Carlson},
+  title = {Developing the {Web100} based network diagnostic tool ({NDT})},
+  booktitle = {Passive and Active Measurement Workshop (PAM)},
+  year = {2003},
+  address = {San Diego, CA},
+  month = {April},
+  url = {https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=ab91101970a37a5b962e69cf20fdad9bde442e62}
+}
+% Original description of NDT, a client/server tool that uses Web100 kernel
+% instrumentation to measure TCP performance, compute theoretical throughput, and
+% diagnose network configuration problems such as duplex mismatch.
 
 @misc{wikiKSdistance,
   author = {Kolmogorov, Andrey and Smirnov, Nikolai},
@@ -184,18 +160,23 @@
 % middlebox processing. Relevant context for interpreting the minRTT differences
 % our methodology uses to detect routing anomalies and hairpinning.
 
-@techreport{BITAG2022latency,
-  author = {{Broadband Internet Technical Advisory Group}},
-  title = {Latency explained},
-  institution = {{BITAG}},
-  year = {2022},
-  url = {https://www.bitag.org/documents/BITAG_latency_explained.pdf},
-  note = {Industry report explaining latency sources and their impact on broadband quality of experience}
+@misc{MLab2025byos,
+  author = {{Measurement Lab}},
+  title = {Host-managed {M-Lab} server documentation},
+  year = {2025},
+  url = {https://www.measurementlab.net/contribute/host-managed/},
+  note = {Accessed: 2026-02-15}
 }
-% Comprehensive industry report arguing that consistently low latency matters
-% as much as throughput for quality of experience. Covers working latency,
-% buffering delay, AQM, and measurement methodologies. Aimed at policymakers
-% and industry; provides accessible context for why latency metrics matter.
+% Documents the BYOS (Bring Your Own Server) program allowing organizations to
+% host M-Lab measurement servers with their own infrastructure.
+
+% TODO MISSING: placeholder key in document
+@misc{TBD00bottlenecks,
+  author = {{TODO}},
+  title = {{TODO: bottleneck fingerprinting reference}},
+  year = {2025},
+  note = {PLACEHOLDER -- needs real entry}
+}
 
 @inproceedings{Luckie2010scamper,
   author = {Luckie, Matthew},
@@ -220,62 +201,6 @@
   note = {Accessed: 2026-02-15}
 }
 % Official documentation, downloads, and man pages for scamper.
-
-@inproceedings{Sundaresan2017tcp,
-  author = {Srikanth Sundaresan and Mark Allman and Amogh Dhamdhere and kc Claffy},
-  title = {{TCP} congestion signatures},
-  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
-  year = {2017},
-  pages = {64--77},
-  month = {November},
-  doi = {10.1145/3131365.3131381},
-  url = {https://dl.acm.org/doi/10.1145/3131365.3131381}
-}
-% Summary: Develops technique to distinguish self-induced congestion from external (pre-existing)
-% congestion using TCP flow RTT characteristics during slow start. Two statistical metrics from
-% flow RTT - coefficient of variation and normalized difference between max/min RTT - can identify
-% congestion type with up to 90% accuracy in controlled experiments. Evaluates on M-Lab data
-% and CAIDA Ark platform achieving 99% accuracy detecting self-induced congestion, 85% for
-% external. Important for understanding what kind of congestion throughput measurements detect.
-% M-LAB MENTION: YES - Uses M-Lab data as one of two real-world datasets for evaluation.
-
-@inproceedings{Dhamdhere2018inferring,
-  author = {Amogh Dhamdhere and David D. Clark and Alexander Gamero-Garrido and Matthew Luckie and Ricky K. P. Mok and Gautam Akiwate and Kabir Gogia and Vaibhav Bajpai and Alex C. Snoeren and kc claffy},
-  title = {Inferring persistent interdomain congestion},
-  booktitle = {Proceedings of the ACM SIGCOMM Conference},
-  year = {2018},
-  pages = {1--15},
-  month = {August},
-  address = {Budapest, Hungary},
-  doi = {10.1145/3230543.3230549},
-  url = {https://dl.acm.org/doi/10.1145/3230543.3230549}
-}
-% Summary: Develops Time Series Latency Probes (TSLP) method to detect congestion on thousands
-% of interdomain links without direct access. Uses latency measurements to detect persistent
-% diurnal congestion patterns. Deployed at 86 vantage points worldwide (CAIDA Ark). Studies
-% 8 large U.S. broadband providers (March 2016-December 2017). Found congestion was not
-% widespread but some links showed recurring patterns. Validates against ground-truth from
-% two providers.
-% M-LAB MENTION: YES - Paper uses M-Lab traceroute data from November-December 2017 to
-% analyze path symmetry for three specific links (Comcast-Tata, Comcast-NTT, CenturyLink-Cogent).
-% Also validates TSLP inferences by correlating with YouTube streaming performance metrics
-% collected from SamKnows and Ark vantage points.
-
-@misc{CAIDA2020manic,
-  author = {{CAIDA}},
-  title = {Measurement and analysis of {Internet} congestion ({MANIC}) project},
-  year = {2020},
-  url = {https://www.caida.org/projects/manic/},
-  note = {Dataset of interdomain congestion using TSLP method from Ark vantage points}
-}
-% Summary: CAIDA project providing prototype system and web service to monitor interdomain
-% links and their congestion state. Uses Time-Sequence Latency Probing (TSLP) method from
-% Ark vantage points after running bdrmap to infer IP links between ASes. Provides empirical
-% grounding for interdomain congestion debates. Dataset collected continuously since 2016.
-% Plans integration with CAIDA's AS Rank platform for complex queries of Internet
-% interconnection infrastructure. Public dataset available for research use.
-% M-LAB MENTION: No direct connection but provides complementary congestion measurement
-% infrastructure that can be compared with M-Lab approaches.
 
 @misc{IPPM,
   author = {{IETF}},
@@ -348,20 +273,6 @@
   note = {Landmark study documenting interconnection congestion effects during 2013-2014}
 }
 
-@misc{Rayburn2014cogent,
-  author       = {Dan Rayburn},
-  title        = {Cogent Now Admits They Slowed Down {Netflix}'s Traffic, Creating a Fast Lane \& Slow Lane},
-  howpublished = {Streaming Media Blog},
-  year         = {2014},
-  month        = nov,
-  url          = {https://www.streamingmediablog.com/2014/11/cogent-now-admits-slowed-netflixs-traffic-creating-fast-lane-slow-lane.html},
-  note         = {Accessed March 2026}
-}
-% Industry blog post reporting Cogent's admission that it deliberately throttled
-% Netflix traffic during the 2014 interconnection dispute, creating a ``fast lane and
-% slow lane'' on a paid-peering link. Contemporary documentation of the congested-
-% interconnect events that prompted the M-Lab interconnection report.
-
 @techreport{FCC2015open,
   author = {{Federal Communications Commission}},
   title = {Protecting and promoting the open {Internet}},
@@ -426,6 +337,16 @@
   note = {Accessed: 2026-02-15}
 }
 
+@techreport{FCC2016broadband,
+  author = {{Federal Communications Commission}},
+  title = {2016 {Measuring Broadband America} fixed broadband report},
+  institution = {{Federal Communications Commission}},
+  year = {2016},
+  month = dec,
+  url = {https://www.fcc.gov/reports-research/reports/measuring-broadband-america/measuring-fixed-broadband-2016},
+  note = {Methodology explicitly focuses on access edge, excluding interconnection effects}
+}
+
 @misc{Ookla,
   author = {Ookla},
   title = {{Speedtest} by {Ookla} -- the global broadband speed test},
@@ -476,6 +397,17 @@
 % - Subject to TCP protocol limitations and congestion control behavior
 % - Performance depends heavily on client hardware/software capabilities
 
+@inproceedings{Bauer2010speed,
+  author = {Bauer, Steven and Clark, David and Lehr, William},
+  title = {Understanding broadband speed measurements},
+  booktitle = {Proceedings of the 38th Research Conference on Communication, Information and Internet Policy (TPRC)},
+  year = {2010},
+  url = {https://groups.csail.mit.edu/ana/Publications/Understanding_broadband_speed_measurements_bauer_clark_lehr_TPRC_2010.pdf}
+}
+% Examines how broadband speed measurements vary significantly across testing
+% methodologies and conditions. Discusses challenges of attributing end-to-end
+% bottlenecks to constituent parts (home network, access, transit, server).
+
 @inproceedings{Bauer2016gigabit,
   author = {Bauer, Steven and Lehr, William and Mou, Merry},
   title = {Improving the measurement and analysis of gigabit broadband networks},
@@ -487,6 +419,18 @@
 % Addresses how the shift to gigabit broadband poses new challenges for
 % performance measurement, user expectations, and regulatory policy.
 
+@misc{Feamster2019challenges,
+  author = {Feamster, Nick and Livingood, Jason},
+  title = {{Internet} speed measurement: Current challenges and future recommendations},
+  year = {2019},
+  eprint = {1905.02334},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.NI},
+  doi = {10.48550/arXiv.1905.02334},
+  url = {https://arxiv.org/abs/1905.02334},
+  note = {Critical review of measurement methodologies; identifies M-Lab's interconnection sensitivity as problematic}
+}
+
 @article{Feamster2020challenges,
   author = {Feamster, Nick and Livingood, Jason},
   title = {Measuring {Internet} speed: Current challenges and future recommendations},
@@ -497,8 +441,8 @@
   year = {2020},
   doi = {10.1145/3372135},
   url = {https://dl.acm.org/doi/10.1145/3372135},
+  note = {Revised and expanded version for broader audience}
 }
-% note = {Revised and expanded version for broader audience}
 % PAPER SUMMARY:
 % Comprehensive review of Internet speed testing methods, their limitations, and
 % recommendations for next-generation measurement approaches. Discusses how speed
@@ -676,17 +620,6 @@
 % to TSLP which doesn't require cooperative endpoints.
 % M-LAB MENTION: No mention - predates M-Lab's prominence in congestion studies.
 
-@inproceedings{Bauer2010speed,
-  author = {Bauer, Steven and Clark, David and Lehr, William},
-  title = {Understanding broadband speed measurements},
-  booktitle = {Proceedings of the 38th Research Conference on Communication, Information and Internet Policy (TPRC)},
-  year = {2010},
-  url = {https://groups.csail.mit.edu/ana/Publications/Understanding_broadband_speed_measurements_bauer_clark_lehr_TPRC_2010.pdf}
-}
-% Examines how broadband speed measurements vary significantly across testing
-% methodologies and conditions. Discusses challenges of attributing end-to-end
-% bottlenecks to constituent parts (home network, access, transit, server).
-
 @inproceedings{Dhamdhere2010you,
   author = {Dhamdhere, Amogh and Dovrolis, Constantine},
   title = {The {Internet} is flat: Modeling the transition from a transit hierarchy to a peering mesh},
@@ -763,16 +696,6 @@
 % exchange. Shows that route server policies significantly affect which paths
 % traffic takes, directly relevant to understanding why different M-Lab servers
 % may see different performance to the same client ISP.
-
-@techreport{FCC2016broadband,
-  author = {{Federal Communications Commission}},
-  title = {2016 {Measuring Broadband America} fixed broadband report},
-  institution = {{Federal Communications Commission}},
-  year = {2016},
-  month = dec,
-  url = {https://www.fcc.gov/reports-research/reports/measuring-broadband-america/measuring-fixed-broadband-2016},
-  note = {Methodology explicitly focuses on access edge, excluding interconnection effects}
-}
 
 @techreport{Claffy2016policy,
   author = {kc Claffy and David D. Clark and Steve Bauer and Amogh Dhamdhere},
@@ -882,6 +805,46 @@
 % Discusses limitations of M-Lab's crowd-sourced approach and lack of path information.
 % Uses M-Lab data from May 2015 showing tests from Atlanta server to various ISPs.
 
+@inproceedings{Sundaresan2017tcp,
+  author = {Srikanth Sundaresan and Mark Allman and Amogh Dhamdhere and kc Claffy},
+  title = {{TCP} congestion signatures},
+  booktitle = {Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC)},
+  year = {2017},
+  pages = {64--77},
+  month = {November},
+  doi = {10.1145/3131365.3131381},
+  url = {https://dl.acm.org/doi/10.1145/3131365.3131381}
+}
+% Summary: Develops technique to distinguish self-induced congestion from external (pre-existing)
+% congestion using TCP flow RTT characteristics during slow start. Two statistical metrics from
+% flow RTT - coefficient of variation and normalized difference between max/min RTT - can identify
+% congestion type with up to 90% accuracy in controlled experiments. Evaluates on M-Lab data
+% and CAIDA Ark platform achieving 99% accuracy detecting self-induced congestion, 85% for
+% external. Important for understanding what kind of congestion throughput measurements detect.
+% M-LAB MENTION: YES - Uses M-Lab data as one of two real-world datasets for evaluation.
+
+@inproceedings{Dhamdhere2018inferring,
+  author = {Amogh Dhamdhere and David D. Clark and Alexander Gamero-Garrido and Matthew Luckie and Ricky K. P. Mok and Gautam Akiwate and Kabir Gogia and Vaibhav Bajpai and Alex C. Snoeren and kc claffy},
+  title = {Inferring persistent interdomain congestion},
+  booktitle = {Proceedings of the ACM SIGCOMM Conference},
+  year = {2018},
+  pages = {1--15},
+  month = {August},
+  address = {Budapest, Hungary},
+  doi = {10.1145/3230543.3230549},
+  url = {https://dl.acm.org/doi/10.1145/3230543.3230549}
+}
+% Summary: Develops Time Series Latency Probes (TSLP) method to detect congestion on thousands
+% of interdomain links without direct access. Uses latency measurements to detect persistent
+% diurnal congestion patterns. Deployed at 86 vantage points worldwide (CAIDA Ark). Studies
+% 8 large U.S. broadband providers (March 2016-December 2017). Found congestion was not
+% widespread but some links showed recurring patterns. Validates against ground-truth from
+% two providers.
+% M-LAB MENTION: YES - Paper uses M-Lab traceroute data from November-December 2017 to
+% analyze path symmetry for three specific links (Comcast-Tata, Comcast-NTT, CenturyLink-Cogent).
+% Also validates TSLP inferences by correlating with YouTube streaming performance metrics
+% collected from SamKnows and Ark vantage points.
+
 @inproceedings{Marder2018bdrmapIT,
   author = {Alexander Marder and Matthew Luckie and Amogh Dhamdhere and Bradley Huffaker and kc claffy and Jonathan M. Smith},
   title = {Pushing the boundaries with {bdrmapIT}: Mapping router ownership at {Internet} scale},
@@ -918,37 +881,21 @@
 % decisions interact with network-level congestion.
 % M-LAB MENTION: No direct use of M-Lab data for this study.
 
-@inproceedings{Meza2018datacenter,
-  author = {Justin Meza and Tianyin Xu and Kaushik Veeraraghavan and Onur Mutlu and others},
-  title = {A Large Scale Study of Data Center Network Reliability},
-  booktitle = {Proceedings of the Internet Measurement Conference (IMC)},
-  year = {2018},
-  pages = {393--407},
-  doi = {10.1145/3278532.3278566},
-  url = {https://dl.acm.org/doi/10.1145/3278532.3278566}
+@misc{CAIDA2020manic,
+  author = {{CAIDA}},
+  title = {Measurement and analysis of {Internet} congestion ({MANIC}) project},
+  year = {2020},
+  url = {https://www.caida.org/projects/manic/},
+  note = {Dataset of interdomain congestion using TSLP method from Ark vantage points}
 }
-
-@misc{Feamster2019challenges,
-  author = {Feamster, Nick and Livingood, Jason},
-  title = {{Internet} speed measurement: Current challenges and future recommendations},
-  year = {2019},
-  eprint = {1905.02334},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.NI},
-  doi = {10.48550/arXiv.1905.02334},
-  url = {https://arxiv.org/abs/1905.02334},
-}
-% note = {Critical review of measurement methodologies; identifies M-Lab's interconnection sensitivity as problematic}
-
-@inproceedings{Richter2019scanning,
-  author = {Philipp Richter and Arthur Berger and Steven J. others},
-  title = {Scanning the Scanners},
-  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
-  year = {2019},
-  pages = {144--157},
-  doi = {10.1145/3355369.3355595},
-  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
-}
+% Summary: CAIDA project providing prototype system and web service to monitor interdomain
+% links and their congestion state. Uses Time-Sequence Latency Probing (TSLP) method from
+% Ark vantage points after running bdrmap to infer IP links between ASes. Provides empirical
+% grounding for interdomain congestion debates. Dataset collected continuously since 2016.
+% Plans integration with CAIDA's AS Rank platform for complex queries of Internet
+% interconnection infrastructure. Public dataset available for research use.
+% M-LAB MENTION: No direct connection but provides complementary congestion measurement
+% infrastructure that can be compared with M-Lab approaches.
 
 @techreport{Clark2021ndt,
   author = {David Clark and Sara Wedeman},
@@ -967,6 +914,19 @@
 % NDT data for policy conclusions, challenges of longitudinal analysis across protocol
 % changes, and the tension between M-Lab's diagnostic origins and its use for broadband
 % benchmarking. Highly relevant context for understanding what NDT data can and cannot show.
+
+@techreport{BITAG2022latency,
+  author = {{Broadband Internet Technical Advisory Group}},
+  title = {Latency explained},
+  institution = {{BITAG}},
+  year = {2022},
+  url = {https://www.bitag.org/documents/BITAG_latency_explained.pdf},
+  note = {Industry report explaining latency sources and their impact on broadband quality of experience}
+}
+% Comprehensive industry report arguing that consistently low latency matters
+% as much as throughput for quality of experience. Covers working latency,
+% buffering delay, AQM, and measurement methodologies. Aimed at policymakers
+% and industry; provides accessible context for why latency metrics matter.
 
 @inproceedings{Carisimo2022jitterbug,
   author = {Esteban Carisimo and Ricky K. P. Mok and David D. Clark and K. C. Claffy},
@@ -1021,16 +981,6 @@
 % M-LAB MENTION: YES - Paper references M-Lab NDT as example measurement platform and discusses
 % its methodology in context of congestion measurement challenges.
 
-@misc{MLab2025byos,
-  author = {{Measurement Lab}},
-  title = {Host-managed {M-Lab} server documentation},
-  year = {2025},
-  url = {https://www.measurementlab.net/contribute/host-managed/},
-  note = {Accessed: 2026-02-15}
-}
-% Documents the BYOS (Bring Your Own Server) program allowing organizations to
-% host M-Lab measurement servers with their own infrastructure.
-
 @misc{IPPM2025responsiveness,
   author = {Paasch, Christoph and Meyer, Randall and Cheshire, Stuart and Hawkins, Will},
   title = {Responsiveness under working conditions},
@@ -1043,4 +993,36 @@
 % is actively in use, expressed as RPM. Addresses the gap between idle latency
 % (what ping measures) and working latency (what users experience). Complements
 % bufferbloat research by providing a standardized measurement approach.
+
+
+@misc{carlson2003NDTcode,
+  author       = {Carlson, Richard A.},
+  title        = {{Web100}-based network diagnostic tool},
+  annote       = {NDT is a client/server based network diagnostic tool developed to aid in finding network performance and configuration problems. The tool measures data transfer rates between two internet hosts (client and server). It also gathers detailed TCP statistical variable counters supplied by the Web100 modified server and uses these TCP variables to compute the theoretical performance rate between the two internet hosts.  It then compares these analytical results with the measured results to determine if performance or configuration problems exist and translates these results into plain text messages to aid users and network operators in resolving reported problems.},
+  url          = {https://www.osti.gov/biblio/1230645},
+  place        = {United States},
+  year         = {2003},
+  month        = {03}}
+
+
+@inproceedings{Richter2019scanning,
+  author = {Philipp Richter and Arthur Berger and Steven J. others},
+  title = {Scanning the Scanners},
+  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC)},
+  year = {2019},
+  pages = {144--157},
+  doi = {10.1145/3355369.3355595},
+  url = {https://dl.acm.org/doi/10.1145/3355369.3355595}
+}
+
+@inproceedings{Meza2018datacenter,
+  author = {Justin Meza and Tianyin Xu and Kaushik Veeraraghavan and Onur Mutlu and others},
+  title = {A Large Scale Study of Data Center Network Reliability},
+  booktitle = {Proceedings of the Internet Measurement Conference (IMC)},
+  year = {2018},
+  pages = {393--407},
+  doi = {10.1145/3278532.3278566},
+  url = {https://dl.acm.org/doi/10.1145/3278532.3278566}
+}
+
 

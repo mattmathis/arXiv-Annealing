@@ -4,6 +4,7 @@
 DOC_ID = 1Jqwh1STyQX80sZHqQmzUVKYRScOEZjc6anskZ-zaiho
 DOC_URL = "https://docs.google.com/document/d/$(DOC_ID)/export?format=txt&tab=t.0"
 BUILD_DIR = build
+STAGE_DIR = stage
 FIGURES_DIR = figures
 BASE_NAME = $(BUILD_DIR)/paper
 
@@ -12,7 +13,7 @@ RAW = $(BUILD_DIR)/paper.wget
 TEX = $(BUILD_DIR)/paper.tex
 PDF = $(BUILD_DIR)/paper.pdf
 BIB = refs.bib
-DRAFTS = "$(HOME)/Downloads/drafts/Annealing.pdf"
+DRAFTS = $(HOME)/Downloads/drafts
 
 .PHONY: all fetch convert pdf clean
 
@@ -42,11 +43,21 @@ pdf: convert
 	@cd $(BUILD_DIR) && pdflatex -interaction=nonstopmode paper.tex >> pdflatex.log 2>&1
 	@echo ""
 	@echo "==> PDF created successfully: $(PDF)"
-	cp $(PDF) $(DRAFTS)
+	cp $(PDF) $(DRAFTS)/Annealing.pdf
 	@echo ""
 
 todo:
 	@cd $(BUILD_DIR) && sed -n 's;.*\(\[@@.*\);\1;p' paper.tex
+
+arxiv: 
+	@echo "==> Building arXiv package..."
+	@rm -rf $(STAGE_DIR)/*
+	@mkdir -p $(STAGE_DIR)
+	@egrep -v 'watermark|Watermark|Draft Built' $(BUILD_DIR)/paper.tex > ${STAGE_DIR}/paper.tex
+	@awk '/UNUSED/{ exit };{ print $0 };' ${BUILD_DIR}/refs.bib > ${STAGE_DIR}/refs.bib
+	@cp $(BUILD_DIR)/figure* $(STAGE_DIR)
+	@cd $(STAGE_DIR) && tar -czf paper_arxiv.tar.gz paper.tex refs.bib figure*
+	cp $(STAGE_DIR)/paper_arxiv.tar.gz $(DRAFTS)/paper_arxiv.tar.gz
 
 clean:
 	@rm -rf $(BUILD_DIR)/*

@@ -25,7 +25,7 @@ fetch:
 	@wget -O$(RAW) $(DOC_URL)
 	@echo "    Document saved to $(RAW)"
 
-convert:
+convert: fetch
 	@tools/mkLatex.sh $(BASE_NAME)
 	@echo "Copying figures and refs.bib"
 	@cp includes/* $(BUILD_DIR)
@@ -49,7 +49,7 @@ pdf: convert
 todo:
 	@cd $(BUILD_DIR) && sed -n 's;.*\(\[@@.*\);\1;p' paper.tex
 
-arxiv: 
+arxiv: pdf
 	@echo "==> Building arXiv package..."
 	@rm -rf $(STAGE_DIR)/*
 	@mkdir -p $(STAGE_DIR)
@@ -60,5 +60,5 @@ arxiv:
 	cp $(STAGE_DIR)/paper_arxiv.tar.gz $(DRAFTS)/paper_arxiv.tar.gz
 
 clean:
-	@rm -rf $(BUILD_DIR)/*
+	@rm -rf $(BUILD_DIR)/* $(STAGE_DIR)/*
 	@echo "Build directory cleaned"
